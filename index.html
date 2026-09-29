@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>কোয়েখা তারবিয়াতুল উম্মাহ্‌ ক্যাডেট একাডেমি — KTUCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&family=Noto+Sans+Bengali:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1F4B3F; --green-dark:#123028; --gold:#C9973B; --cream:#FBF7EE;
+  --ink:#20241F; --sub:#5B6459; --line:#E4DCC8; --card:#FFFFFF;
+  --danger:#B3492E; --ok:#2F6B4F;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--cream:#151915;--card:#1E241D;--ink:#EDEADF;--sub:#A9B0A2;--line:#333B31;--green:#3C7D65;}}
+:root[data-theme="dark"]{--cream:#151915;--card:#1E241D;--ink:#EDEADF;--sub:#A9B0A2;--line:#333B31;--green:#3C7D65;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Noto Sans Bengali',sans-serif;line-height:1.6;}
+h1,h2,h3,.serif{font-family:'Noto Serif Bengali',serif;}
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:230px;background:var(--green-dark);color:#fff;transform:translateX(-100%);transition:transform .25s ease;z-index:30;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);overflow-y:auto;}
+.sidebar.open{transform:translateX(0);}
+.side-brand{padding:18px 16px 12px;border-bottom:1px solid rgba(255,255,255,.15);}
+.side-brand .name{font-family:'Noto Serif Bengali',serif;font-weight:700;font-size:1rem;display:block;}
+.side-brand .sub{font-size:.72rem;opacity:.75;}
+nav#tabBar{display:flex;flex-direction:column;padding:10px;gap:2px;}
+nav#tabBar button{text-align:left;background:transparent;border:none;color:#EDE7D3;padding:11px 12px;font-size:.9rem;border-radius:8px;cursor:pointer;font-family:inherit;border-left:3px solid transparent;}
+nav#tabBar button.active{background:rgba(255,255,255,.1);color:#fff;font-weight:600;border-left:3px solid var(--gold);}
+.side-footer{margin-top:auto;padding:12px;border-top:1px solid rgba(255,255,255,.15);}
+.role-badge{font-size:.72rem;color:#C7D9CE;margin-bottom:8px;padding:0 4px;}
+.role-badge b{color:#fff;}
+.side-footer button{width:100%;padding:9px;border-radius:8px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;cursor:pointer;font-family:inherit;font-size:.83rem;}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:25;display:none;}
+.overlay.open{display:block;}
+.content-wrap{min-height:100vh;}
+header{background:var(--green);color:#fff;padding:12px 16px calc(12px + env(safe-area-inset-top,0px));position:sticky;top:0;z-index:10;}
+.top-row{display:flex;align-items:center;gap:10px;}
+.hamburger{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:8px;padding:8px 11px;font-size:1rem;cursor:pointer;line-height:1;}
+.brand{display:flex;flex-direction:column;flex:1;min-width:0;}
+.brand .name{font-family:'Noto Serif Bengali',serif;font-weight:700;font-size:.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.brand .sub{font-size:.7rem;opacity:.8;}
+.gear{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:8px;padding:7px 10px;font-size:.8rem;cursor:pointer;flex:0 0 auto;}
+.lang-panel{display:none;background:var(--green-dark);padding:10px 16px;gap:8px;margin:0 -16px -12px;}
+.lang-panel.open{display:flex;padding-top:10px;margin-top:10px;}
+.lang-panel button{flex:1;padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;cursor:pointer;font-family:inherit;}
+.lang-panel button.active{background:var(--gold);border-color:var(--gold);color:#1a1a1a;font-weight:600;}
+main{max-width:760px;margin:0 auto;padding:18px 16px 60px;}
+section{display:none;}
+section.active{display:block;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px;}
+.card h3{margin:0 0 8px;font-size:1.02rem;}
+.badge{display:inline-block;font-size:.7rem;padding:2px 8px;border-radius:20px;background:var(--gold);color:#3a2c08;font-weight:600;margin-left:6px;vertical-align:middle;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:420px){.grid2{grid-template-columns:1fr;}}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;text-align:left;}
+.stat .num{font-family:'Noto Serif Bengali',serif;font-size:1.5rem;font-weight:700;color:var(--green);}
+.stat .num.exp{color:var(--danger);}
+.stat .lbl{font-size:.8rem;color:var(--sub);}
+table{width:100%;border-collapse:collapse;font-size:.88rem;}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);}
+th{color:var(--sub);font-weight:600;font-size:.78rem;}
+.tablewrap{overflow-x:auto;}
+.tag{display:inline-block;padding:2px 9px;border-radius:20px;font-size:.75rem;font-weight:600;}
+.tag.present{background:#E4F0E8;color:var(--ok);}
+.tag.absent{background:#F7E4DE;color:var(--danger);}
+.tag.late{background:#FBF0DA;color:#96731A;}
+.tag.paid{background:#E4F0E8;color:var(--ok);}
+.tag.due{background:#FBF0DA;color:#96731A;}
+:root[data-theme="dark"] .tag.present,:root:not([data-theme="light"]) .tag.present{background:#20362A;}
+:root[data-theme="dark"] .tag.absent,:root:not([data-theme="light"]) .tag.absent{background:#3A241F;}
+:root[data-theme="dark"] .tag.late,:root:not([data-theme="light"]) .tag.late{background:#3A311A;}
+:root[data-theme="dark"] .tag.paid,:root:not([data-theme="light"]) .tag.paid{background:#20362A;}
+:root[data-theme="dark"] .tag.due,:root:not([data-theme="light"]) .tag.due{background:#3A311A;}
+.people{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:420px){.people{grid-template-columns:1fr;}}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;}
+.pcard .av{width:42px;height:42px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif Bengali',serif;font-weight:700;margin-bottom:8px;}
+.pcard .pname{font-weight:600;font-size:.92rem;}
+.pcard .prole{font-size:.78rem;color:var(--sub);}
+label{display:block;font-size:.82rem;color:var(--sub);margin:10px 0 4px;}
+input,select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--cream);color:var(--ink);font-family:inherit;font-size:.92rem;}
+.btn{margin-top:14px;width:100%;padding:11px;background:var(--green);color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.92rem;}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink);}
+.btn:disabled{opacity:.55;cursor:not-allowed;}
+.hint{font-size:.76rem;color:var(--sub);margin-top:8px;}
+.notice{background:#F7E4DE;color:var(--danger);border-radius:8px;padding:9px 12px;font-size:.85rem;margin-top:10px;}
+.notice.info{background:#FBF0DA;color:#7A5A10;}
+:root[data-theme="dark"] .notice,:root:not([data-theme="light"]) .notice{background:#3A241F;}
+:root[data-theme="dark"] .notice.info,:root:not([data-theme="light"]) .notice.info{background:#3A311A;}
+.steps{margin:0;padding-left:18px;}
+.steps li{margin-bottom:6px;font-size:.9rem;}
+footer{text-align:center;font-size:.76rem;color:var(--sub);padding:20px;}
+.searchgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:420px){.searchgrid{grid-template-columns:1fr;}}
+.stu-row{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px;}
+.stu-head{display:flex;justify-content:space-between;align-items:center;gap:8px;cursor:pointer;}
+.stu-head .who{display:flex;flex-direction:column;}
+.stu-head .snm{font-weight:600;font-size:.94rem;}
+.stu-head .smeta{font-size:.76rem;color:var(--sub);}
+.stu-head .sactions{display:flex;gap:6px;flex:0 0 auto;}
+.iconbtn{background:var(--green);color:#fff;border:none;border-radius:7px;padding:7px 10px;font-size:.78rem;cursor:pointer;font-family:inherit;}
+.stu-detail{display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:.86rem;}
+.stu-detail.open{display:block;}
+.dl{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;margin-bottom:8px;}
+.dl div span{color:var(--sub);}
+.dsec{font-weight:600;color:var(--green);margin:8px 0 4px;font-size:.82rem;}
+#printArea{display:none;}
+@media print{
+  body *{visibility:hidden;}
+  #printArea,#printArea *{visibility:visible;}
+  #printArea{display:block;position:absolute;top:0;left:0;width:100%;padding:20px;}
+  .sidebar,header,footer,.overlay{display:none !important;}
+}
+@media(min-width:860px){.sidebar{transform:translateX(0);}.overlay{display:none !important;}.content-wrap{margin-left:230px;}.hamburger{display:none;}}
+</style>
+</head>
+<body>
+<div class="overlay" id="overlay"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="side-brand">
+    <span class="name">কোয়েখা তারবিয়াতুল উম্মাহ্‌ ক্যাডেট একাডেমি</span>
+    <span class="sub">ktuca.edu.bd</span>
+  </div>
+  <nav id="tabBar"></nav>
+  <div class="side-footer">
+    <div class="role-badge" id="roleBadge"></div>
+    <button id="logoutBtn" style="display:none;"></button>
+  </div>
+</aside>
+
+<div class="content-wrap">
+<header>
+  <div class="top-row">
+    <button class="hamburger" id="hamburgerBtn">☰</button>
+    <div class="brand">
+      <span class="name">কোয়েখা তারবিয়াতুল উম্মাহ্‌ ক্যাডেট একাডেমি</span>
+      <span class="sub">ktuca.edu.bd</span>
+    </div>
+    <button class="gear" id="gearBtn">⚙ <span id="gearLbl">ভাষা</span></button>
+  </div>
+  <div class="lang-panel" id="langPanel">
+    <button data-lang="bn" id="btnBn">বাংলা</button>
+    <button data-lang="en" id="btnEn">English</button>
+  </div>
+</header>
+
+<main>
+  <section id="home" class="active">
+    <div class="card">
+      <h1 class="serif" id="homeTitle" style="margin:0 0 4px;font-size:1.25rem;"></h1>
+      <p id="homeLoc" style="color:var(--sub);margin:0 0 10px;font-size:.88rem;"></p>
+      <p id="homeAbout" style="margin:0;"></p>
+    </div>
+    <div class="card"><h3 id="contactTitle"></h3><p id="contactBody" style="margin:0;font-size:.9rem;color:var(--sub);"></p></div>
+  </section>
+
+  <section id="admission">
+    <div class="card" id="admEntryForm" style="display:none;">
+      <h3 id="admEntryTitle"></h3>
+      <p style="color:var(--sub);font-size:.85rem;margin:0 0 6px;" id="admEntryDesc"></p>
+      <label id="lblAeName"></label><input id="aeName">
+      <label id="lblAeFather"></label><input id="aeFather">
+      <label id="lblAeMother"></label><input id="aeMother">
+      <label id="lblAeDob"></label><input id="aeDob" type="date">
+      <label id="lblAeBirthReg"></label><input id="aeBirthReg">
+      <label id="lblAeFatherMobile"></label><input id="aeFatherMobile">
+      <label id="lblAeGuardianMobile"></label><input id="aeGuardianMobile">
+      <label id="lblAeClass"></label><select id="aeClass"></select>
+      <label id="lblAeRoll"></label><input id="aeRoll" type="number" min="1">
+      <button class="btn" id="aeSubmitBtn"></button>
+      <div class="notice info" id="aeSuccess" style="display:none;"></div>
+    </div>
+    <div class="card"><h3 id="admIntroTitle"></h3><p id="admIntroBody" style="margin:0;color:var(--sub);font-size:.9rem;"></p></div>
+    <div class="card"><h3 id="admStepsTitle"></h3><ol class="steps" id="admSteps"></ol></div>
+    <div class="card"><h3 id="admDocsTitle"></h3><ol class="steps" id="admDocs"></ol></div>
+    <div class="card"><h3 id="admContactTitle"></h3><p id="admContactBody" style="margin:0;color:var(--sub);font-size:.9rem;"></p></div>
+  </section>
+
+  <section id="notice">
+    <div class="card" id="staffNoticeForm" style="display:none;">
+      <h3 id="noticeAddTitle"></h3>
+      <label id="lblNoticeTitle"></label><input id="noticeTitleInput">
+      <label id="lblNoticeBody"></label><input id="noticeBodyInput">
+      <button class="btn" id="addNoticeBtn"></button>
+    </div>
+    <div class="card"><h3 id="noticeBoardTitle"></h3><div id="noticeList"></div></div>
+  </section>
+
+  <section id="parentLogin">
+    <div class="card">
+      <h3 id="parentTitle"></h3>
+      <p style="color:var(--sub);font-size:.88rem;margin:0 0 8px;" id="parentDesc"></p>
+      <div id="plTabs" style="display:flex;gap:6px;margin:8px 0;"></div>
+      <div id="plBody"></div>
+      <div class="notice" id="parentLoginError" style="display:none;"></div>
+    </div>
+  </section>
+
+  <section id="staffLogin">
+    <div class="card">
+      <h3 id="staffTitle"></h3>
+      <p style="color:var(--sub);font-size:.88rem;margin:0;" id="staffDesc"></p>
+      <label id="lblStaffId"></label><input id="staffId" placeholder="staff">
+      <label id="lblStaffPass"></label><input id="staffPass" type="password" placeholder="••••••">
+      <button class="btn" id="staffLoginBtn"></button>
+      <p class="hint" id="staffDemoHint"></p>
+      <div class="notice" id="staffLoginError" style="display:none;"></div>
+    </div>
+  </section>
+
+  <section id="mydash">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+        <h3 id="pdName" style="margin:0;"></h3>
+        <button class="iconbtn" id="pdPrintBtn"></button>
+      </div>
+      <p style="color:var(--sub);font-size:.85rem;margin:4px 0 0;" id="pdClass"></p>
+    </div>
+    <div id="mydashProfile"></div>
+  </section>
+
+  <section id="settings">
+    <div class="card">
+      <h3 id="settingsTitle"></h3>
+      <p style="color:var(--sub);font-size:.85rem;margin:0 0 6px;" id="settingsDesc"></p>
+      <div id="visibilityToggles"></div>
+    </div>
+    <div class="card">
+      <h3 id="scoreMgmtTitle"></h3>
+      <p class="hint" id="scoreMgmtDesc" style="margin:0 0 8px;"></p>
+      <div id="scoreCatList"></div>
+      <div style="margin-top:10px;">
+        <label id="lblScName"></label><input id="scName">
+        <label id="lblScWho"></label><select id="scWho"></select>
+        <label id="lblScMax"></label><input id="scMax" type="number" min="1">
+        <button class="btn" id="scAddBtn"></button>
+      </div>
+    </div>
+    <div class="card">
+      <h3 id="scoreRulesTitle"></h3>
+      <p class="hint" id="scoreRulesDesc" style="margin:0 0 8px;"></p>
+      <div id="scoreRuleList"></div>
+      <div style="margin-top:10px;">
+        <label id="lblSrName"></label><input id="srName">
+        <label id="lblSrType"></label><select id="srType"></select>
+        <label id="lblSrStudent"></label><input id="srStudent" type="number" min="0" value="0">
+        <label id="lblSrGuardian"></label><input id="srGuardian" type="number" min="0" value="0">
+        <button class="btn" id="srAddBtn"></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="loginLog">
+    <div class="card"><h3 id="loginLogTitle"></h3><p class="hint" id="loginLogDesc" style="margin:0 0 8px;"></p><div class="tablewrap"><table id="loginLogTable"></table></div></div>
+  </section>
+
+  <section id="payment">
+    <div class="card">
+      <h3 id="payDueTitle"></h3>
+      <div class="tablewrap"><table id="payDueTable"></table></div>
+      <button class="btn" id="payNowBtn" disabled></button>
+      <div class="notice info" id="payGatewayNotice"></div>
+    </div>
+    <div class="card"><h3 id="payHistTitle"></h3><div class="tablewrap"><table id="payHistTable"></table></div></div>
+  </section>
+
+  <section id="students">
+    <div class="card">
+      <h3 id="studentsTitle"></h3>
+      <div class="searchgrid">
+        <div><label id="lblSearchName"></label><input id="sNameSearch" placeholder=""></div>
+        <div><label id="lblSearchRoll"></label><input id="sRollSearch" placeholder=""></div>
+        <div><label id="lblSearchClass"></label><select id="sClassFilter"></select></div>
+        <div><label id="lblSearchResult"></label><select id="sResultFilter"></select></div>
+      </div>
+      <button class="btn ghost" id="printListBtn"></button>
+      <p class="hint" id="sCountHint"></p>
+    </div>
+    <div id="studentsRichList"></div>
+  </section>
+  <div id="printArea"></div>
+  <section id="teachers"><div class="card"><h3 id="teachersTitle"></h3><div class="people" id="teachersList"></div></div></section>
+  <section id="attendance">
+    <div class="card">
+      <h3 id="attTitle"></h3>
+      <p class="hint" id="attDateNote" style="margin-top:2px;"></p>
+      <div id="attClassTabs" style="display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 6px;"></div>
+      <div class="notice info" id="attEditNotice"></div>
+    </div>
+    <div id="attList"></div>
+  </section>
+  <section id="finance">
+    <div class="grid2" style="margin-bottom:14px;">
+      <div class="stat"><div class="num" id="finIncomeNum"></div><div class="lbl" id="finIncomeLbl"></div></div>
+      <div class="stat"><div class="num exp" id="finExpenseNum"></div><div class="lbl" id="finExpenseLbl"></div></div>
+    </div>
+    <div class="card"><h3 id="finTableTitle"></h3><div class="tablewrap"><table id="finTable"></table></div></div>
+  </section>
+  <section id="routine">
+    <div class="card"><h3 id="routineTitle"></h3><div class="tablewrap"><table id="routineTable"></table></div></div>
+    <div class="card"><h3 id="examTitle"></h3><div class="tablewrap"><table id="examTable"></table></div></div>
+  </section>
+  <section id="results"><div class="card"><h3 id="resultsTitle"></h3><div class="tablewrap"><table id="resultsTable"></table></div></div></section>
+</main>
+<footer id="footNote"></footer>
+</div>
+
+<script>
+const T = {
+ bn:{tabs:{home:"হোম",admission:"ভর্তি",notice:"নোটিশ বোর্ড",parentLogin:"অভিভাবক লগইন",staffLogin:"স্টাফ লগইন",mydash:"আমার তথ্য",payment:"পেমেন্ট",
+  finance:"আয়-ব্যয়",students:"স্টুডেন্ট",teachers:"টিচার",attendance:"এটেন্ডেন্সি",routine:"রুটিন ও পরীক্ষা",results:"ফলাফল",settings:"সেটিংস",loginLog:"লগইন লগ"},
+  settingsTitle:"প্রোফাইল দৃশ্যমানতা সেটিংস",settingsDesc:"অভিভাবকরা স্টুডেন্ট প্রোফাইলের কোন কোন অংশ দেখতে পারবে, তা এখান থেকে ঠিক করুন।",
+  scoreMgmtTitle:"স্কোর ম্যানেজমেন্ট",scoreMgmtDesc:"স্কোরে নতুন বিষয়/খাত যুক্ত করুন — কার জন্য (শিক্ষার্থী/অভিভাবক/উভয়ে) ও সর্বোচ্চ নম্বর ঠিক করে দিন।",
+  lblScName:"বিষয়ের নাম",lblScWho:"কার জন্য",lblScMax:"সর্বোচ্চ নম্বর",scAddBtn:"যুক্ত করুন",scRemove:"মুছুন",
+  scWhoStudent:"শিক্ষার্থী",scWhoGuardian:"অভিভাবক",scWhoBoth:"উভয়ে",scMaxShort:"সর্বোচ্চ",
+  scNet:"নিট স্কোর",scBase:"মূল",plusLogTitle:"প্লাস স্কোর (নিয়ম মানার বোনাস)",minusLogTitle:"মাইনাস স্কোর (অনিয়মের কর্তন)",
+  scApplyTitle:"প্লাস/মাইনাস স্কোর প্রয়োগ",scApplyBtn:"প্রয়োগ করুন",
+  scoreRulesTitle:"স্কোরের প্লাস/মাইনাস নিয়মাবলী",scoreRulesDesc:"নিয়ম মানলে প্লাস, অনিয়ম করলে মাইনাস — নিয়ম ও পয়েন্ট এখান থেকে ঠিক করুন। নিয়ম আগে থেকে ঠিক থাকলে স্টুডেন্ট প্রোফাইল থেকে প্রয়োগ করা যাবে।",
+  lblSrName:"নিয়মের নাম",lblSrType:"ধরন",lblSrStudent:"শিক্ষার্থীর পয়েন্ট",lblSrGuardian:"অভিভাবকের পয়েন্ট",srPlus:"প্লাস (বোনাস)",srMinus:"মাইনাস (কর্তন)",srAddBtn:"নিয়ম যুক্ত করুন",
+  noticeBoardTitle:"নোটিশ বোর্ড",noticeAddTitle:"নতুন নোটিশ যুক্ত করুন",lblNoticeTitle:"শিরোনাম",lblNoticeBody:"বিস্তারিত",addNoticeBtn:"প্রকাশ করুন",noticeEmpty:"এখনো কোনো নোটিশ নেই।",
+  roleNames:{guest:"অতিথি",parent:"অভিভাবক",staff:"স্টাফ"},roleLabel:"বর্তমান অবস্থা",logoutBtn:"লগআউট",
+  homeTitle:"কোয়েখা তারবিয়াতুল উম্মাহ্‌ ক্যাডেট একাডেমি",homeLoc:"কোয়েখা, বাংলাদেশ",
+  homeAbout:"এই মাদরাসা দ্বীনি শিক্ষার পাশাপাশি আধুনিক ক্যাডেট-ধাঁচের শৃঙ্খলা ও একাডেমিক শিক্ষার সমন্বয়ে শিক্ষার্থীদের চরিত্রবান ও যোগ্য নাগরিক হিসেবে গড়ে তোলার লক্ষ্যে কাজ করে যাচ্ছে। ওয়েবসাইটের কিছু তথ্য সবাই দেখতে পারবে, আর অভিভাবক ও স্টাফদের জন্য নির্দিষ্ট তথ্য লগইন করে দেখতে হবে।",
+  contactTitle:"যোগাযোগ",contactBody:"ফোন: ০১৭XX-XXXXXX · ইমেইল: info@ktuca.edu.bd",
+  admIntroTitle:"ভর্তি সম্পর্কে",admIntroBody:"প্রতি শিক্ষাবর্ষের শুরুতে নতুন শিক্ষার্থী ভর্তি করা হয়। আসন সংখ্যা সীমিত, তাই আগেভাগে আবেদন করার পরামর্শ দেওয়া হচ্ছে।",
+  admEntryTitle:"নতুন শিক্ষার্থী ভর্তি এন্ট্রি",admEntryDesc:"ভর্তি ফরম অনুযায়ী তথ্য পূরণ করে এন্ট্রি করলে শিক্ষার্থী স্বয়ংক্রিয়ভাবে স্টুডেন্ট তালিকা, হাজিরা ও অন্যান্য পেজে যুক্ত হয়ে যাবে।",
+  lblAeName:"নাম",lblAeFather:"পিতার নাম",lblAeMother:"মাতার নাম",lblAeDob:"জন্মতারিখ",lblAeBirthReg:"জন্মনিবন্ধন নম্বর",
+  lblAeFatherMobile:"পিতার মোবাইল নম্বর",lblAeGuardianMobile:"অভিভাবকের মোবাইল নম্বর",lblAeClass:"শ্রেণি",lblAeRoll:"রোল",
+  aeSubmitBtn:"ভর্তি নিশ্চিত করুন",aeSuccess:"ভর্তি সম্পন্ন হয়েছে। ইউনিক নম্বর: ",aeFillRequired:"নাম, শ্রেণি ও রোল আবশ্যক।",aeRollTaken:"এই শ্রেণিতে এই রোল নম্বরটি আগে থেকেই ব্যবহৃত হয়েছে।",
+  admStepsTitle:"ভর্তি প্রক্রিয়া",admSteps:["ভর্তি ফরম সংগ্রহ ও পূরণ","প্রয়োজনীয় কাগজপত্র জমা","ভর্তি পরীক্ষা / মৌখিক সাক্ষাৎকার","ফলাফল প্রকাশ ও ভর্তি নিশ্চিতকরণ"],
+  admDocsTitle:"প্রয়োজনীয় কাগজপত্র",admDocs:["জন্মনিবন্ধন সনদের কপি","পূর্ববর্তী প্রতিষ্ঠানের প্রশংসাপত্র (যদি থাকে)","অভিভাবকের এনআইডি'র কপি","০২ কপি পাসপোর্ট সাইজ ছবি"],
+  admContactTitle:"যোগাযোগ",admContactBody:"ভর্তি অফিস: ০১৭XX-XXXXXX · সময়: শনি–বৃহস্পতি, সকাল ৯টা – বিকাল ৪টা",
+  parentTitle:"অভিভাবক লগইন",parentDesc:"সন্তানের হাজিরা, ফলাফল ও পেমেন্ট দেখতে লগইন করুন।",
+  loginLogTitle:"লগইন লগ (কে কোন ডিভাইস থেকে ঢুকেছে)",loginLogDesc:"ডেমোতে শুধু ডিভাইসের ধরন (ওএস ও ব্রাউজার) রেকর্ড হয়। আসল ভার্সনে সার্ভার থেকে আইপি অ্যাড্রেসও সংরক্ষিত হবে।",
+  llCols:["সময়","ব্যবহারকারী","ভূমিকা","ডিভাইস","আইপি"],llIp:"সার্ভার থেকে সংগৃহীত হবে",llEmpty:"এখনো কোনো লগইন নেই।",llRoles:{parent:"অভিভাবক",staff:"স্টাফ"},
+  paSignIn:"সাইন ইন",paSignUp:"সাইন আপ",paForgotPw:"পাসওয়ার্ড ভুলে গেছেন?",paForgotRoll:"ইউনিক রোল নম্বর ভুলে গেছেন?",paBack:"← সাইন ইনে ফিরুন",
+  lblMobile:"মোবাইল নম্বর",lblRoll:"ইউনিক রোল নম্বর",lblPw:"পাসওয়ার্ড",lblNewPw:"নতুন পাসওয়ার্ড",lblPw2:"পাসওয়ার্ড আবার লিখুন",
+  paSendOtp:"OTP পাঠান",paVerifyOtp:"OTP যাচাই করুন",paSavePw:"পাসওয়ার্ড সংরক্ষণ করুন",paSignInBtn:"সাইন ইন",paOtpLbl:"OTP লিখুন",
+  paOtpDemo:"ডেমো OTP (বাস্তবে SMS-এ যাবে): ",paYourRolls:"এই মোবাইল নম্বরে নিবন্ধিত সন্তানদের ইউনিক রোল নম্বর:",
+  paErrNoMatch:"এই মোবাইল নম্বর ও ইউনিক রোল নম্বর মিলছে না।",paErrNoMobile:"এই মোবাইল নম্বরে কোনো শিক্ষার্থী পাওয়া যায়নি।",
+  paErrNotReg:"এই অ্যাকাউন্ট এখনো নিবন্ধিত নয়। আগে সাইন আপ করুন।",paErrAlreadyReg:"এই অ্যাকাউন্ট আগেই নিবন্ধিত। সাইন ইন করুন বা পাসওয়ার্ড ভুলে গেলে রিসেট করুন।",
+  paErrPw:"পাসওয়ার্ড ভুল।",paErrPwShort:"পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে।",paErrPwMismatch:"দুই পাসওয়ার্ড মিলছে না।",paErrOtp:"OTP মিলছে না। আবার চেষ্টা করুন।",
+  paSignedUp:"নিবন্ধন সম্পন্ন! এখন সাইন ইন করুন।",paPwReset:"পাসওয়ার্ড পরিবর্তন হয়েছে। এখন সাইন ইন করুন।",
+  paDemoHint:"ডেমো: মোবাইল ০১৮১১-১১১১১১, ইউনিক রোল 010526, পাসওয়ার্ড 123456",
+  lblAplMobile:"মোবাইল নম্বর",lblAplCode:"ইউনিক রোল নম্বর",aplSendBtn:"OTP পাঠান",
+  aplDemoHint:"ডেমো: মোবাইল ০১৮১১-১১১১১১, ইউনিক রোল নম্বর 010526",
+  aplOtpNotice:"ডেমো OTP (বাস্তবে এটি SMS-এ যাবে, এখানে শুধু দেখানো হচ্ছে): ",
+  lblAplOtp:"OTP লিখুন",aplVerifyBtn:"যাচাই করে লগইন করুন",
+  aplNoMatch:"এই মোবাইল নম্বর ও ইউনিক রোল নম্বর মিলছে না।",aplOtpWrong:"OTP মিলছে না। আবার চেষ্টা করুন।",
+  loginError:"ভুল তথ্য দেওয়া হয়েছে। আবার চেষ্টা করুন।",
+  staffTitle:"স্টাফ / এন্ট্রি লগইন",staffDesc:"শিক্ষক ও কর্মীরা তথ্য পরিচালনার জন্য এখানে লগইন করবেন।",
+  lblStaffId:"ইউজার নেম",lblStaffPass:"পাসওয়ার্ড",staffDemoHint:"ডেমো: ইউজার staff, পাসওয়ার্ড 1234",
+  pdAttTitle:"হাজিরার সারসংক্ষেপ",pdResTitle:"পরীক্ষার ফলাফল",
+  payDueTitle:"বকেয়া ফি",payCols:["খাত","পরিমাণ (৳)","অবস্থা"],payNowBtn:"পেমেন্ট করুন (শীঘ্রই আসছে)",
+  payGatewayNotice:"পেমেন্ট গেটওয়ে এখনো যুক্ত করা হয়নি — এই সিস্টেম প্রস্তুত আছে, গেটওয়ে যুক্ত হলে এখান থেকেই সরাসরি পেমেন্ট করা যাবে।",
+  payHistTitle:"পেমেন্ট হিস্টরি",payHistCols:["তারিখ","খাত","পরিমাণ (৳)","অবস্থা"],
+  finIncomeLbl:"মোট আয় (এই মাস)",finExpenseLbl:"মোট ব্যয় (এই মাস)",finTableTitle:"সাম্প্রতিক লেনদেন",finCols:["তারিখ","বিবরণ","ধরন","পরিমাণ (৳)"],
+  studentsTitle:"স্টুডেন্ট প্রোফাইল",teachersTitle:"টিচার প্রোফাইল",
+  lblSearchName:"নাম",lblSearchRoll:"রোল",lblSearchClass:"শ্রেণি",lblSearchResult:"ফলাফল",
+  classOptions:{all:"সকল শ্রেণি",play:"প্লে",nursery:"নার্সারী",prothom:"প্রথম",dwitiyo:"দ্বিতীয়",tritiyo:"তৃতীয়"},
+  resultOptions:{all:"সকল",monthly:"মাসিক",first:"১ম সাময়িক",second:"২য় সাময়িক",annual:"বার্ষিক"},
+  printListBtn:"তালিকা প্রিন্ট করুন",printOneBtn:"প্রিন্ট",sCountHint:"জন শিক্ষার্থী পাওয়া গেছে",
+  secPersonal:"ব্যক্তিগত তথ্য",secAcademic:"শিক্ষা বিষয়ক তথ্য",secScore:"স্কোর",secAttendance:"উপস্থিতি",secResult:"ফলাফল",secFee:"বেতন-ভাতা",
+  fName:"নাম",fFather:"পিতার নাম",fMother:"মাতার নাম",fDob:"জন্মতারিখ",fBirthReg:"জন্মনিবন্ধন নম্বর",fFatherMobile:"পিতার মোবাইল নম্বর",fGuardianMobile:"অভিভাবকের মোবাইল নম্বর",
+  fMadrasa:"মাদরাসার নাম",fClass:"শ্রেণি",fRoll:"রোল",fUnique:"বাৎসরিক ইউনিক নম্বর",
+  fScoreStudent:"শিক্ষার্থী",fScoreGuardian:"অভিভাবক",fFeeStatus:"অবস্থা",fFeeDue:"বকেয়া (৳)",
+  noAccess:"এই তথ্য দেখার অনুমতি নেই।",noHomework:"এখনো কোনো বাড়ির কাজ নেই।",
+  feeDueTitle:"বকেয়ার তালিকা",feeInvoiceTitle:"পরিশোধকৃতের ইনভয়েস",noDue:"কোনো বকেয়া নেই।",noInvoice:"কোনো ইনভয়েস নেই।",
+  hwDone:"সম্পন্ন",hwPending:"বাকি",scRulesInline:"স্কোরের নিয়মাবলী",
+  scAttendance:"উপস্থিতি",scPunctuality:"সময়ানুবর্তিতা",scHomework:"বাড়ির কাজ",
+  scFee:"বেতন-ভাতা সময়মতো পরিশোধ",scInforming:"অনুপস্থিতি যথাসময়ে জানানো",scReturnLeave:"ছুটির পর সময়মতো পাঠানো",
+  absenceLogTitle:"অনুপস্থিতির রেকর্ড ও কর্তন",
+  reasonLabels:{sick:"শিক্ষার্থী অসুস্থ",familyIllness:"পরিবারের সদস্যের অসুস্থতা",familyDeath:"পরিবারের কারো মৃত্যু"},
+  reportedDayLabels:{1:"১ম দিনে জানানো হয়েছে",2:"২য় দিনে জানানো হয়েছে",3:"৩য় দিনে জানানো হয়েছে",late:"সুস্থ হওয়ার পর জানানো হয়েছে"},
+  attTitle:"আজকের হাজিরা",attCols:["আইডি","নাম","ক্লাস","অবস্থা"],
+  attDateNote:"{date} — প্রতিদিন প্রথম ক্লাসে হাজিরার মাধ্যমে উপস্থিতি-অনুপস্থিতি নির্ধারিত হয়।",
+  attEditNote:"ক্লাস শেষ (দুপুর ২:০০টা) হওয়ার আগ পর্যন্ত হাজিরা সম্পাদনা করা যাবে।",
+  attEditClosed:"আজকের হাজিরা সম্পাদনার সময় শেষ হয়ে গেছে (দুপুর ২:০০টার পর)।",
+  attPresent:"উপস্থিত",attAbsent:"অনুপস্থিত",attLate:"বিলম্বিত",
+  routineTitle:"সাপ্তাহিক রুটিন",routineCols:["দিন","১ম পিরিয়ড","২য় পিরিয়ড","৩য় পিরিয়ড"],
+  examTitle:"পরীক্ষার সময়সূচি",examCols:["পরীক্ষা","বিষয়","তারিখ"],
+  resultsTitle:"সাম্প্রতিক ফলাফল",resultsCols:["আইডি","নাম","ক্লাস","জিপিএ"],
+  footNote:"© কোয়েখা তারবিয়াতুল উম্মাহ্‌ ক্যাডেট একাডেমি — ডেমো ওয়েবসাইট"},
+ en:{tabs:{home:"Home",admission:"Admission",notice:"Notice Board",parentLogin:"Parent Login",staffLogin:"Staff Login",mydash:"My Info",payment:"Payment",
+  finance:"Income–Expense",students:"Students",teachers:"Teachers",attendance:"Attendance",routine:"Routine & Exam",results:"Results",settings:"Settings",loginLog:"Login Log"},
+  settingsTitle:"Profile Visibility Settings",settingsDesc:"Choose which parts of the student profile parents are allowed to see.",
+  scoreMgmtTitle:"Score Management",scoreMgmtDesc:"Add a new score category — choose who it applies to (student/guardian/both) and its maximum points.",
+  lblScName:"Category name",lblScWho:"Applies to",lblScMax:"Max points",scAddBtn:"Add",scRemove:"Remove",
+  scWhoStudent:"Student",scWhoGuardian:"Guardian",scWhoBoth:"Both",scMaxShort:"max",
+  scNet:"Net score",scBase:"Base",plusLogTitle:"Plus score (bonus for following rules)",minusLogTitle:"Minus score (deductions for irregularities)",
+  scApplyTitle:"Apply plus/minus score",scApplyBtn:"Apply",
+  scoreRulesTitle:"Plus/Minus Score Rules",scoreRulesDesc:"Follow the rules → plus, break them → minus. Define the rules and points here; then apply them from a student's profile.",
+  lblSrName:"Rule name",lblSrType:"Type",lblSrStudent:"Student points",lblSrGuardian:"Guardian points",srPlus:"Plus (bonus)",srMinus:"Minus (deduction)",srAddBtn:"Add rule",
+  noticeBoardTitle:"Notice Board",noticeAddTitle:"Post a New Notice",lblNoticeTitle:"Title",lblNoticeBody:"Details",addNoticeBtn:"Publish",noticeEmpty:"No notices yet.",
+  roleNames:{guest:"Guest",parent:"Parent",staff:"Staff"},roleLabel:"Signed in as",logoutBtn:"Log out",
+  homeTitle:"Koekha Tarbiyatul Ummah Cadet Academy",homeLoc:"Koekha, Bangladesh",
+  homeAbout:"This madrasa combines religious education with disciplined, cadet-style academic training. Some information is public; parent- and staff-specific information requires login.",
+  contactTitle:"Contact",contactBody:"Phone: 017XX-XXXXXX · Email: info@ktuca.edu.bd",
+  admIntroTitle:"About Admission",admIntroBody:"New students are admitted at the start of every academic year. Seats are limited, so early application is recommended.",
+  admEntryTitle:"New Student Admission Entry",admEntryDesc:"Fill in the details from the admission form — the student is automatically added to the student list, attendance and other pages.",
+  lblAeName:"Name",lblAeFather:"Father's Name",lblAeMother:"Mother's Name",lblAeDob:"Date of Birth",lblAeBirthReg:"Birth Registration No.",
+  lblAeFatherMobile:"Father's Mobile",lblAeGuardianMobile:"Guardian's Mobile",lblAeClass:"Class",lblAeRoll:"Roll",
+  aeSubmitBtn:"Confirm Admission",aeSuccess:"Admission complete. Unique number: ",aeFillRequired:"Name, class and roll are required.",aeRollTaken:"This roll number is already used in this class.",
+  admStepsTitle:"Admission Process",admSteps:["Collect and fill out the admission form","Submit the required documents","Admission test / interview","Result announcement and admission confirmation"],
+  admDocsTitle:"Required Documents",admDocs:["Copy of birth certificate","Transfer certificate from previous school (if any)","Copy of guardian's NID","2 copies of passport-size photo"],
+  admContactTitle:"Contact",admContactBody:"Admission office: 017XX-XXXXXX · Hours: Sat–Thu, 9am–4pm",
+  parentTitle:"Parent Login",parentDesc:"Log in to view your child's attendance, results and payments.",
+  loginLogTitle:"Login Log (who signed in from which device)",loginLogDesc:"In this demo only the device type (OS and browser) is recorded. In the real version the IP address will also be saved from the server.",
+  llCols:["Time","User","Role","Device","IP"],llIp:"Captured by server",llEmpty:"No logins yet.",llRoles:{parent:"Parent",staff:"Staff"},
+  paSignIn:"Sign In",paSignUp:"Sign Up",paForgotPw:"Forgot Password?",paForgotRoll:"Forgot Unique Roll Number?",paBack:"← Back to Sign In",
+  lblMobile:"Mobile Number",lblRoll:"Unique Roll Number",lblPw:"Password",lblNewPw:"New Password",lblPw2:"Re-enter Password",
+  paSendOtp:"Send OTP",paVerifyOtp:"Verify OTP",paSavePw:"Save Password",paSignInBtn:"Sign In",paOtpLbl:"Enter OTP",
+  paOtpDemo:"Demo OTP (in reality sent by SMS): ",paYourRolls:"Unique roll numbers of children registered with this mobile number:",
+  paErrNoMatch:"This mobile number and unique roll number don't match.",paErrNoMobile:"No student found for this mobile number.",
+  paErrNotReg:"This account isn't registered yet. Please sign up first.",paErrAlreadyReg:"This account is already registered. Sign in, or reset your password if forgotten.",
+  paErrPw:"Incorrect password.",paErrPwShort:"Password must be at least 6 characters.",paErrPwMismatch:"The two passwords don't match.",paErrOtp:"OTP doesn't match. Try again.",
+  paSignedUp:"Registration complete! Please sign in.",paPwReset:"Password changed. Please sign in.",
+  paDemoHint:"Demo: mobile ০১৮১১-১১১১১১, unique roll 010526, password 123456",
+  lblAplMobile:"Mobile Number",lblAplCode:"Unique Roll Number",aplSendBtn:"Send OTP",
+  aplDemoHint:"Demo: mobile ০১৮১১-১১১১১১, unique roll number 010526",
+  aplOtpNotice:"Demo OTP (in reality this goes by SMS; shown here only for demo): ",
+  lblAplOtp:"Enter OTP",aplVerifyBtn:"Verify & log in",
+  aplNoMatch:"This mobile number and unique roll number don't match.",aplOtpWrong:"OTP doesn't match. Try again.",
+  loginError:"Incorrect details. Please try again.",
+  staffTitle:"Staff / Entry Login",staffDesc:"Teachers and staff log in here to manage academy data.",
+  lblStaffId:"Username",lblStaffPass:"Password",staffDemoHint:"Demo: username staff, password 1234",
+  pdAttTitle:"Attendance summary",pdResTitle:"Exam results",
+  payDueTitle:"Outstanding Fees",payCols:["Item","Amount (৳)","Status"],payNowBtn:"Pay Now (coming soon)",
+  payGatewayNotice:"The payment gateway isn't connected yet — this system is ready, and once the gateway is added you'll be able to pay directly from here.",
+  payHistTitle:"Payment History",payHistCols:["Date","Item","Amount (৳)","Status"],
+  finIncomeLbl:"Total income (this month)",finExpenseLbl:"Total expense (this month)",finTableTitle:"Recent transactions",finCols:["Date","Description","Type","Amount (৳)"],
+  studentsTitle:"Student Profiles",teachersTitle:"Teacher Profiles",
+  lblSearchName:"Name",lblSearchRoll:"Roll",lblSearchClass:"Class",lblSearchResult:"Result",
+  classOptions:{all:"All classes",play:"Play",nursery:"Nursery",prothom:"Class 1",dwitiyo:"Class 2",tritiyo:"Class 3"},
+  resultOptions:{all:"All",monthly:"Monthly",first:"1st Term",second:"2nd Term",annual:"Annual"},
+  printListBtn:"Print List",printOneBtn:"Print",sCountHint:"student(s) found",
+  secPersonal:"Personal Information",secAcademic:"Academic Information",secScore:"Score",secAttendance:"Attendance",secResult:"Result",secFee:"Fees",
+  fName:"Name",fFather:"Father's Name",fMother:"Mother's Name",fDob:"Date of Birth",fBirthReg:"Birth Registration No.",fFatherMobile:"Father's Mobile",fGuardianMobile:"Guardian's Mobile",
+  fMadrasa:"Madrasa Name",fClass:"Class",fRoll:"Roll",fUnique:"Annual Unique No.",
+  fScoreStudent:"Student",fScoreGuardian:"Guardian",fFeeStatus:"Status",fFeeDue:"Due (৳)",
+  noAccess:"You do not have permission to view this.",noHomework:"No homework yet.",
+  feeDueTitle:"Outstanding Dues",feeInvoiceTitle:"Paid Invoices",noDue:"No dues.",noInvoice:"No invoices.",
+  hwDone:"Done",hwPending:"Pending",scRulesInline:"Scoring Rules",
+  scAttendance:"Attendance",scPunctuality:"Punctuality",scHomework:"Homework",
+  scFee:"Fee paid on time",scInforming:"Reporting absence promptly",scReturnLeave:"Returning on time after leave",
+  absenceLogTitle:"Absence Log & Deductions",
+  reasonLabels:{sick:"Student was sick",familyIllness:"Illness in family",familyDeath:"Death in family"},
+  reportedDayLabels:{1:"Reported on day 1",2:"Reported on day 2",3:"Reported on day 3",late:"Reported only after recovery"},
+  attTitle:"Today's Attendance",attCols:["ID","Name","Class","Status"],
+  attDateNote:"{date} — attendance is taken by roll call during the first period each day.",
+  attEditNote:"Attendance can still be edited until classes end (2:00 PM).",
+  attEditClosed:"Today's attendance edit window has closed (after 2:00 PM).",
+  attPresent:"Present",attAbsent:"Absent",attLate:"Late",
+  routineTitle:"Weekly Routine",routineCols:["Day","Period 1","Period 2","Period 3"],
+  examTitle:"Exam Schedule",examCols:["Exam","Subject","Date"],
+  resultsTitle:"Recent Results",resultsCols:["ID","Name","Class","GPA"],
+  footNote:"© Koekha Tarbiyatul Ummah Cadet Academy — demo website"}
+};
+
+const finance=[["০৫ আশ্বিন","ছাত্র বেতন","আয়","৪২,০০০"],["০৩ আশ্বিন","বিদ্যুৎ বিল","ব্যয়","৩,৮০০"],["০১ আশ্বিন","অনুদান","আয়","১৫,০০০"],["২৮ ভাদ্র","শিক্ষক বেতন","ব্যয়","৫৮,০০০"]];
+const students=[["আব্দুল্লাহ ইবনে করিম","ষষ্ঠ শ্রেণি · STD-104"],["ইউসুফ আহমাদ","সপ্তম শ্রেণি · STD-109"],["মারিয়াম বিনতে হক","ষষ্ঠ শ্রেণি · STD-112"],["ফাতিমা তুজ জোহরা","অষ্টম শ্রেণি · STD-118"]];
+const classCode={play:1,nursery:5,prothom:10,dwitiyo:20,tritiyo:30};
+function pad2(n){return String(n).padStart(2,"0");}
+function uniqueCode(classKey,roll,year){return pad2(classCode[classKey])+pad2(roll)+pad2(year);}
+const richStudents=[
+ {name:"আব্দুল্লাহ ইবনে করিম",father:"মোঃ করিম উদ্দিন",mother:"রাহেলা বেগম",dob:"১২-০৩-২০২০",birthReg:"১৯৯৮২৬১১২৩৪৫৬৭৮",fatherMobile:"০১৭১১-১১১১১১",guardianMobile:"০১৮১১-১১১১১১",classKey:"play",roll:5,year:26,
+  scores:{attendance:34,punctuality:16,homework:32,fee:34,informing:24,returnLeave:16},
+  absenceLog:[{date:"১৮ আশ্বিন",reason:"sick",reportedDay:1,studentDeduct:2,guardianDeduct:1}],
+  bonusLog:[{date:"০২ আশ্বিন",ruleKey:"hw_full",student:5,guardian:0},{date:"০৫ আশ্বিন",ruleKey:"fee_early",student:0,guardian:5}],penaltyLog:[],
+  homework:[{date:"২৫ আশ্বিন",subject:"কুরআন",desc:"সূরা ফাতিহা মুখস্থ",status:"done"},{date:"২৭ আশ্বিন",subject:"গণিত",desc:"১-১০ পর্যন্ত লেখা",status:"pending"}],
+  dueItems:[{item:"টিউশন ফি (আশ্বিন)",amount:1500}],invoices:[{no:"INV-1024",date:"১০ ভাদ্র",item:"ভর্তি ফি",amount:3000}],
+  todayStatus:"present",attendance:"৯৪%",results:{monthly:"৪.৮০",first:"৪.৭৫",second:"৪.৯০",annual:"৪.৮৫"},feeStatus:"due",feeDue:1500},
+ {name:"ইউসুফ আহমাদ",father:"মোঃ আহমাদ আলী",mother:"সাবিনা ইয়াসমিন",dob:"০৫-০৭-২০১৯",birthReg:"১৯৯৮২৬১১২৩৪৫৬৭৯",fatherMobile:"০১৭২২-২২২২২২",guardianMobile:"০১৮২২-২২২২২২",classKey:"nursery",roll:12,year:26,
+  scores:{attendance:36,punctuality:18,homework:30,fee:48,informing:28,returnLeave:18},
+  absenceLog:[{date:"০৫ আশ্বিন",reason:"familyIllness",reportedDay:2,studentDeduct:2,guardianDeduct:2}],
+  bonusLog:[{date:"০১ আশ্বিন",ruleKey:"on_time",student:3,guardian:0}],penaltyLog:[],
+  homework:[{date:"২৬ আশ্বিন",subject:"বাংলা",desc:"অ-আ লেখা",status:"done"}],
+  dueItems:[],invoices:[{no:"INV-1031",date:"০৫ আশ্বিন",item:"টিউশন ফি (আশ্বিন)",amount:1200}],
+  todayStatus:"present",attendance:"৯০%",results:{monthly:"৪.৫০",first:"৪.৬০",second:"৪.৪০",annual:"৪.৫৫"},feeStatus:"paid",feeDue:0},
+ {name:"মারিয়াম বিনতে হক",father:"মোঃ হকিকুল ইসলাম",mother:"নাজমা আক্তার",dob:"২১-১১-২০১৮",birthReg:"১৯৯৮২৬১১২৩৪৫৬৮০",fatherMobile:"০১৭৩৩-৩৩৩৩৩৩",guardianMobile:"০১৮৩৩-৩৩৩৩৩৩",classKey:"prothom",roll:22,year:26,
+  scores:{attendance:39,punctuality:20,homework:38,fee:50,informing:30,returnLeave:20},
+  absenceLog:[],
+  bonusLog:[{date:"৩০ ভাদ্র",ruleKey:"full_att",student:5,guardian:3},{date:"০৩ আশ্বিন",ruleKey:"fee_early",student:0,guardian:5},{date:"০৫ আশ্বিন",ruleKey:"hw_full",student:5,guardian:0}],penaltyLog:[],
+  homework:[{date:"২৫ আশ্বিন",subject:"ইংরেজি",desc:"Spelling practice",status:"done"},{date:"২৭ আশ্বিন",subject:"বিজ্ঞান",desc:"চিত্র আঁকা",status:"done"}],
+  dueItems:[],invoices:[{no:"INV-1040",date:"০৩ আশ্বিন",item:"টিউশন ফি (আশ্বিন)",amount:1500}],
+  todayStatus:"present",attendance:"৯৭%",results:{monthly:"৫.০০",first:"৪.৯৫",second:"৫.০০",annual:"৪.৯৮"},feeStatus:"paid",feeDue:0},
+ {name:"ফাতিমা তুজ জোহরা",father:"মোঃ জোহরুল ইসলাম",mother:"শিরিনা বেগম",dob:"০৯-০৯-২০১৭",birthReg:"১৯৯৮২৬১১২৩৪৫৬৮১",fatherMobile:"০১৭৪৪-৪৪৪৪৪৪",guardianMobile:"০১৮৪৪-৪৪৪৪৪৪",classKey:"dwitiyo",roll:8,year:26,
+  scores:{attendance:28,punctuality:14,homework:26,fee:30,informing:18,returnLeave:12},
+  absenceLog:[{date:"১০ ভাদ্র",reason:"sick",reportedDay:"late",studentDeduct:10,guardianDeduct:10},{date:"২২ ভাদ্র",reason:"sick",reportedDay:3,studentDeduct:7,guardianDeduct:5}],
+  bonusLog:[],penaltyLog:[{date:"১৫ ভাদ্র",ruleKey:"late_fee",student:0,guardian:5},{date:"২০ ভাদ্র",ruleKey:"hw_missing",student:2,guardian:0}],
+  homework:[{date:"২৪ আশ্বিন",subject:"গণিত",desc:"নামতা ২-৫",status:"pending"}],
+  dueItems:[{item:"টিউশন ফি (আশ্বিন)",amount:1200}],invoices:[],
+  todayStatus:"absent",attendance:"৮৬%",results:{monthly:"৪.১০",first:"৪.০০",second:"৪.২০",annual:"৪.১০"},feeStatus:"due",feeDue:1200},
+ {name:"ইয়াকুব হাসান",father:"মোঃ হাসান মিয়া",mother:"রোকেয়া খাতুন",dob:"১৭-০২-২০১৬",birthReg:"১৯৯৮২৬১১২৩৪৫৬৮২",fatherMobile:"০১৭৫৫-৫৫৫৫৫৫",guardianMobile:"০১৮৫৫-৫৫৫৫৫৫",classKey:"tritiyo",roll:15,year:26,
+  scores:{attendance:36,punctuality:18,homework:34,fee:47,informing:27,returnLeave:17},
+  absenceLog:[{date:"১২ আশ্বিন",reason:"familyDeath",reportedDay:1,studentDeduct:0,guardianDeduct:0}],
+  bonusLog:[{date:"২৫ ভাদ্র",ruleKey:"return_on_time",student:3,guardian:3}],penaltyLog:[],
+  homework:[{date:"২৬ আশ্বিন",subject:"আরবি",desc:"হরফ লেখা",status:"done"}],
+  dueItems:[],invoices:[{no:"INV-1052",date:"০১ আশ্বিন",item:"টিউশন ফি (আশ্বিন)",amount:1800}],
+  todayStatus:"late",attendance:"৯১%",results:{monthly:"৪.৭০",first:"৪.৮০",second:"৪.৬৫",annual:"৪.৭২"},feeStatus:"paid",feeDue:0},
+ {name:"আয়েশা সিদ্দিকা",father:"মোঃ সিদ্দিক রহমান",mother:"হোসনে আরা",dob:"০৩-০৫-২০২০",birthReg:"১৯৯৮২৬১১২৩৪৫৬৮৩",fatherMobile:"০১৭৬৬-৬৬৬৬৬৬",guardianMobile:"০১৮৬৬-৬৬৬৬৬৬",classKey:"play",roll:11,year:26,
+  scores:{attendance:32,punctuality:15,homework:30,fee:32,informing:22,returnLeave:14},
+  absenceLog:[{date:"০৮ আশ্বিন",reason:"sick",reportedDay:2,studentDeduct:5,guardianDeduct:3}],
+  bonusLog:[],penaltyLog:[{date:"০৯ আশ্বিন",ruleKey:"late_arrival",student:1,guardian:1}],
+  homework:[{date:"২৫ আশ্বিন",subject:"কুরআন",desc:"সূরা ইখলাস শোনানো",status:"pending"}],
+  dueItems:[{item:"টিউশন ফি (আশ্বিন)",amount:800}],invoices:[],
+  todayStatus:"present",attendance:"৮৯%",results:{monthly:"৪.৩০",first:"৪.২০",second:"৪.৪০",annual:"৪.৩০"},feeStatus:"due",feeDue:800}
+];
+const teachers=[["মাওলানা রফিকুল ইসলাম","প্রধান শিক্ষক"],["হাফেজা সালমা খাতুন","কুরআন বিভাগ"],["শিক্ষক তানভীর হাসান","সাধারণ শিক্ষা"],["শিক্ষিকা নুসরাত জাহান","গণিত ও বিজ্ঞান"]];
+const routine=[["শনিবার","কুরআন","বাংলা","গণিত"],["রবিবার","হাদিস","ইংরেজি","বিজ্ঞান"],["সোমবার","ফিকহ","গণিত","সমাজ"],["মঙ্গলবার","আরবি","বিজ্ঞান","আইসিটি"]];
+const exams=[["অর্ধবার্ষিক","কুরআন","১০ কার্তিক"],["অর্ধবার্ষিক","গণিত","১২ কার্তিক"],["অর্ধবার্ষিক","ইংরেজি","১৪ কার্তিক"]];
+const examNotices=[
+ {date:"১৫ আশ্বিন",title:"অর্ধবার্ষিক পরীক্ষার সময়সূচি প্রকাশ",body:"সকল শ্রেণির অর্ধবার্ষিক পরীক্ষা আগামী ১০ কার্তিক থেকে শুরু হবে।"},
+ {date:"২০ আশ্বিন",title:"সিলেবাস প্রকাশ",body:"পরীক্ষার সিলেবাস নোটিশ বোর্ডে সংযুক্ত করা হয়েছে।"}
+];
+const results=[["STD-104","আব্দুল্লাহ ইবনে করিম","৬ষ্ঠ","৫.০০"],["STD-109","ইউসুফ আহমাদ","৭ম","৪.৮৩"],["STD-112","মারিয়াম বিনতে হক","৬ষ্ঠ","৪.৯১"],["STD-118","ফাতিমা তুজ জোহরা","৮ম","৫.০০"]];
+const staffAccounts={"staff":"1234"};
+let notices=[
+  {dateBn:"২০ আশ্বিন",dateEn:"Oct 6",titleBn:"অর্ধবার্ষিক পরীক্ষার রুটিন প্রকাশ",titleEn:"Half-yearly exam routine published",bodyBn:"অর্ধবার্ষিক পরীক্ষার রুটিন 'রুটিন ও পরীক্ষা' মেন্যুতে দেওয়া হয়েছে। সকল শিক্ষার্থীকে সময়মতো উপস্থিত থাকার অনুরোধ করা হলো।",bodyEn:"The half-yearly exam routine has been posted under the Routine & Exam menu. All students are requested to attend on time."},
+  {dateBn:"১২ আশ্বিন",dateEn:"Sep 28",titleBn:"ভর্তি আবেদন শুরু",titleEn:"Admission applications open",bodyBn:"আগামী শিক্ষাবর্ষের জন্য ভর্তি আবেদন গ্রহণ শুরু হয়েছে। বিস্তারিত 'ভর্তি' মেন্যুতে দেখুন।",bodyEn:"Admission applications for the next academic year are now open. See the Admission menu for details."},
+  {dateBn:"০৩ আশ্বিন",dateEn:"Sep 19",titleBn:"অভিভাবক সমাবেশ",titleEn:"Parents' gathering",bodyBn:"আগামী শুক্রবার বাদ জুমা অভিভাবক সমাবেশ অনুষ্ঠিত হবে। সকল অভিভাবককে উপস্থিত থাকার অনুরোধ করা হলো।",bodyEn:"A parents' gathering will be held this Friday after Jumu'ah prayer. All parents are requested to attend."}
+];
+
+let lang="bn", role="guest", currentTab="home", loggedInId=null;
+let profileVisibility={personal:true,academic:true,score:true,attendance:true,result:true,fee:true};
+const visibilityFields=[{key:"personal",labelKey:"secPersonal"},{key:"academic",labelKey:"secAcademic"},{key:"score",labelKey:"secScore"},{key:"attendance",labelKey:"secAttendance"},{key:"result",labelKey:"secResult"},{key:"fee",labelKey:"secFee"}];
+let scoreCategories=[
+  {key:"attendance",labelBn:"উপস্থিতি",labelEn:"Attendance",who:"student",max:40},
+  {key:"punctuality",labelBn:"সময়ানুবর্তিতা",labelEn:"Punctuality",who:"student",max:20},
+  {key:"homework",labelBn:"বাড়ির কাজ",labelEn:"Homework",who:"student",max:40},
+  {key:"fee",labelBn:"বেতন-ভাতা সময়মতো পরিশোধ",labelEn:"Fee paid on time",who:"guardian",max:50},
+  {key:"informing",labelBn:"অনুপস্থিতি যথাসময়ে জানানো",labelEn:"Reporting absence promptly",who:"guardian",max:30},
+  {key:"returnLeave",labelBn:"ছুটির পর সময়মতো পাঠানো",labelEn:"Returning on time after leave",who:"guardian",max:20}
+];
+let scoreRules=[
+  {key:"full_att",type:"plus",nameBn:"পূর্ণ মাস শতভাগ উপস্থিতি",nameEn:"Full-month attendance",student:5,guardian:3},
+  {key:"on_time",type:"plus",nameBn:"পুরো মাস সময়মতো উপস্থিতি",nameEn:"On time all month",student:3,guardian:0},
+  {key:"hw_full",type:"plus",nameBn:"সব বাড়ির কাজ সম্পন্ন",nameEn:"All homework completed",student:5,guardian:0},
+  {key:"fee_early",type:"plus",nameBn:"নির্ধারিত তারিখের মধ্যে বেতন পরিশোধ",nameEn:"Fee paid within due date",student:0,guardian:5},
+  {key:"report_day1",type:"plus",nameBn:"অনুপস্থিতি ১ম দিনেই জানানো",nameEn:"Absence reported on day 1",student:0,guardian:2},
+  {key:"return_on_time",type:"plus",nameBn:"ছুটির পর যথাসময়ে ফেরা",nameEn:"Returned on time after leave",student:3,guardian:3},
+  {key:"late_fee",type:"minus",nameBn:"নির্ধারিত তারিখের পর বেতন পরিশোধ",nameEn:"Fee paid after due date",student:0,guardian:5},
+  {key:"hw_missing",type:"minus",nameBn:"বাড়ির কাজ না করা",nameEn:"Homework not done",student:2,guardian:0},
+  {key:"late_arrival",type:"minus",nameBn:"দেরিতে উপস্থিতি",nameEn:"Late arrival",student:1,guardian:1},
+  {key:"late_return",type:"minus",nameBn:"ছুটির পর দেরিতে ফেরা",nameEn:"Late return after leave",student:3,guardian:3}
+];
+function ruleOf(k){return scoreRules.find(r=>r.key===k);}
+function ruleLabel(k){const r=ruleOf(k);return r?(lang==="bn"?r.nameBn:r.nameEn):k;}
+const profileSections=[
+ {key:"profile",labelBn:"প্রোফাইল",labelEn:"Profile"},
+ {key:"score",labelBn:"স্কোর",labelEn:"Score"},
+ {key:"homework",labelBn:"বাড়ির কাজ",labelEn:"Home Work"},
+ {key:"examNotice",labelBn:"পরীক্ষার নোটিশ",labelEn:"Exam Notice"},
+ {key:"examRoutine",labelBn:"পরীক্ষার রুটিন",labelEn:"Exam Routine"},
+ {key:"results",labelBn:"ফলাফল",labelEn:"Results"},
+ {key:"fees",labelBn:"বেতন-ভাতা",labelEn:"Fees"}
+];
+let profileActiveSection={};
+
+
+function tabsFor(r){
+  if(r==="staff") return ["home","admission","notice","students","teachers","attendance","finance","routine","results","settings","loginLog"];
+  if(r==="parent") return ["home","admission","notice","mydash"];
+  return ["home","admission","notice","parentLogin","staffLogin"];
+}
+function buildTabs(){
+  const bar=document.getElementById("tabBar");
+  bar.innerHTML="";
+  tabsFor(role).forEach(id=>{
+    const b=document.createElement("button");
+    b.textContent=T[lang].tabs[id];
+    b.className=id===currentTab?"active":"";
+    b.dataset.tab=id;
+    b.onclick=()=>{showTab(id);closeSidebar();};
+    bar.appendChild(b);
+  });
+  document.getElementById("roleBadge").innerHTML=T[lang].roleLabel+": <b>"+T[lang].roleNames[role]+"</b>";
+  const lo=document.getElementById("logoutBtn");
+  lo.style.display=role==="guest"?"none":"block";
+  lo.textContent=T[lang].logoutBtn;
+}
+function showTab(id){
+  currentTab=id;
+  document.querySelectorAll("main section").forEach(s=>s.classList.toggle("active",s.id===id));
+  document.querySelectorAll("#tabBar button").forEach(b=>b.classList.toggle("active",b.dataset.tab===id));
+}
+function openSidebar(){document.getElementById("sidebar").classList.add("open");document.getElementById("overlay").classList.add("open");}
+function closeSidebar(){if(window.innerWidth<860){document.getElementById("sidebar").classList.remove("open");document.getElementById("overlay").classList.remove("open");}}
+
+function rows(container,cols,data,tagIndex){
+  let html="<tr>"+cols.map(c=>`<th>${c}</th>`).join("")+"</tr>";
+  data.forEach(r=>{
+    html+="<tr>"+r.map((cell,i)=>{
+      if(i===tagIndex){
+        const map={present:{bn:"উপস্থিত",en:"Present"},absent:{bn:"অনুপস্থিত",en:"Absent"},late:{bn:"বিলম্বিত",en:"Late"},paid:{bn:"পরিশোধিত",en:"Paid"},due:{bn:"বকেয়া",en:"Due"}};
+        return `<td><span class="tag ${cell}">${map[cell][lang]}</span></td>`;
+      }
+      return `<td>${cell}</td>`;
+    }).join("")+"</tr>";
+  });
+  container.innerHTML=html;
+}
+
+function render(){
+  const t=T[lang];
+  document.documentElement.lang=lang;
+  document.getElementById("gearLbl").textContent=lang==="bn"?"ভাষা":"Language";
+  document.getElementById("btnBn").className=lang==="bn"?"active":"";
+  document.getElementById("btnEn").className=lang==="en"?"active":"";
+  buildTabs();
+
+  document.getElementById("homeTitle").textContent=t.homeTitle;
+  document.getElementById("homeLoc").textContent=t.homeLoc;
+  document.getElementById("homeAbout").textContent=t.homeAbout;
+  document.getElementById("contactTitle").textContent=t.contactTitle;
+  document.getElementById("contactBody").textContent=t.contactBody;
+
+  document.getElementById("admIntroTitle").textContent=t.admIntroTitle;
+  document.getElementById("admIntroBody").textContent=t.admIntroBody;
+  document.getElementById("admStepsTitle").textContent=t.admStepsTitle;
+  document.getElementById("admSteps").innerHTML=t.admSteps.map(s=>`<li>${s}</li>`).join("");
+  document.getElementById("admDocsTitle").textContent=t.admDocsTitle;
+  document.getElementById("admDocs").innerHTML=t.admDocs.map(s=>`<li>${s}</li>`).join("");
+  document.getElementById("admContactTitle").textContent=t.admContactTitle;
+  document.getElementById("admContactBody").textContent=t.admContactBody;
+  renderAdmissionEntry();
+
+  document.getElementById("parentTitle").textContent=t.parentTitle;
+  document.getElementById("parentDesc").textContent=t.parentDesc;
+  renderParentAuth();
+  renderLoginLog();
+
+  document.getElementById("staffTitle").textContent=t.staffTitle;
+  document.getElementById("staffDesc").textContent=t.staffDesc;
+  document.getElementById("lblStaffId").textContent=t.lblStaffId;
+  document.getElementById("lblStaffPass").textContent=t.lblStaffPass;
+  document.getElementById("staffLoginBtn").textContent=t.loginBtn;
+  document.getElementById("staffDemoHint").textContent=t.staffDemoHint;
+  document.getElementById("staffLoginError").textContent=t.loginError;
+
+  document.getElementById("noticeBoardTitle").textContent=t.noticeBoardTitle;
+  document.getElementById("noticeAddTitle").textContent=t.noticeAddTitle;
+  document.getElementById("lblNoticeTitle").textContent=t.lblNoticeTitle;
+  document.getElementById("lblNoticeBody").textContent=t.lblNoticeBody;
+  document.getElementById("addNoticeBtn").textContent=t.addNoticeBtn;
+  document.getElementById("staffNoticeForm").style.display=role==="staff"?"block":"none";
+  const nl=document.getElementById("noticeList");
+  if(notices.length===0){
+    nl.innerHTML=`<p style="color:var(--sub);font-size:.88rem;margin:0;">${t.noticeEmpty}</p>`;
+  }else{
+    nl.innerHTML=notices.map(n=>`<div style="padding:10px 0;border-bottom:1px solid var(--line);">
+      <div style="font-size:.74rem;color:var(--sub);">${lang==="bn"?n.dateBn:n.dateEn}</div>
+      <div style="font-weight:600;font-size:.94rem;margin:2px 0 4px;">${lang==="bn"?n.titleBn:n.titleEn}</div>
+      <div style="font-size:.86rem;color:var(--sub);">${lang==="bn"?n.bodyBn:n.bodyEn}</div>
+    </div>`).join("");
+  }
+
+  document.getElementById("pdPrintBtn").textContent=t.printOneBtn;
+  document.getElementById("payDueTitle").textContent=t.payDueTitle;
+  document.getElementById("payHistTitle").textContent=t.payHistTitle;
+  document.getElementById("payNowBtn").textContent=t.payNowBtn;
+  document.getElementById("payGatewayNotice").textContent=t.payGatewayNotice;
+
+  document.getElementById("finIncomeNum").textContent="৳ ৫৭,০০০";
+  document.getElementById("finExpenseNum").textContent="৳ ৬১,৮০০";
+  document.getElementById("finIncomeLbl").textContent=t.finIncomeLbl;
+  document.getElementById("finExpenseLbl").textContent=t.finExpenseLbl;
+  document.getElementById("finTableTitle").textContent=t.finTableTitle;
+  rows(document.getElementById("finTable"),t.finCols,finance,-1);
+
+  document.getElementById("studentsTitle").textContent=t.studentsTitle;
+  document.getElementById("lblSearchName").textContent=t.lblSearchName;
+  document.getElementById("lblSearchRoll").textContent=t.lblSearchRoll;
+  document.getElementById("lblSearchClass").textContent=t.lblSearchClass;
+  document.getElementById("lblSearchResult").textContent=t.lblSearchResult;
+  document.getElementById("printListBtn").textContent=t.printListBtn;
+  fillSelect(document.getElementById("sClassFilter"),t.classOptions);
+  fillSelect(document.getElementById("sResultFilter"),t.resultOptions);
+  renderStudentsList();
+  renderSettings();
+  renderScoreMgmt();
+  renderScoreRules();
+  document.getElementById("teachersTitle").textContent=t.teachersTitle;
+  document.getElementById("teachersList").innerHTML=teachers.map(s=>`<div class="pcard"><div class="av">${s[0][0]}</div><div class="pname">${s[0]}</div><div class="prole">${s[1]}</div></div>`).join("");
+
+  renderAttendance();
+  document.getElementById("routineTitle").textContent=t.routineTitle;
+  rows(document.getElementById("routineTable"),t.routineCols,routine,-1);
+  document.getElementById("examTitle").textContent=t.examTitle;
+  rows(document.getElementById("examTable"),t.examCols,exams,-1);
+  document.getElementById("resultsTitle").textContent=t.resultsTitle;
+  rows(document.getElementById("resultsTable"),t.resultsCols,results,-1);
+  document.getElementById("footNote").textContent=t.footNote;
+
+  if(role==="parent" && loggedInId) fillParentViews(loggedInId);
+}
+
+function renderSettings(){
+  const t=T[lang];
+  document.getElementById("settingsTitle").textContent=t.settingsTitle;
+  document.getElementById("settingsDesc").textContent=t.settingsDesc;
+  const c=document.getElementById("visibilityToggles");
+  c.innerHTML=visibilityFields.map(f=>`<label style="display:flex;align-items:center;gap:8px;margin:10px 0;font-size:.9rem;">
+    <input type="checkbox" data-key="${f.key}" ${profileVisibility[f.key]?"checked":""} style="width:auto;">${t[f.labelKey]}
+  </label>`).join("");
+  c.querySelectorAll("input[type=checkbox]").forEach(cb=>{cb.onchange=()=>{profileVisibility[cb.dataset.key]=cb.checked;};});
+}
+function renderScoreRules(){
+  const t=T[lang];
+  ["scoreRulesTitle","scoreRulesDesc","lblSrName","lblSrType","lblSrStudent","lblSrGuardian"].forEach(id=>document.getElementById(id).textContent=t[id]);
+  document.getElementById("srAddBtn").textContent=t.srAddBtn;
+  const ts=document.getElementById("srType");
+  const prev=ts.value||"plus";
+  ts.innerHTML=`<option value="plus">${t.srPlus}</option><option value="minus">${t.srMinus}</option>`;
+  ts.value=prev;
+  const el=document.getElementById("scoreRuleList");
+  el.innerHTML=scoreRules.map((r,i)=>{
+    const sg=r.type==="plus"?"+":"−", col=r.type==="plus"?"var(--ok)":"var(--danger)";
+    return `<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--line);font-size:.85rem;">
+      <div><span style="color:${col};font-weight:600;">${sg}</span> ${lang==="bn"?r.nameBn:r.nameEn} <span style="color:var(--sub);">(${t.scWhoStudent} ${sg}${r.student}, ${t.scWhoGuardian} ${sg}${r.guardian})</span></div>
+      <button data-idx="${i}" class="iconbtn sr-remove" style="background:var(--danger);">${t.scRemove}</button></div>`;
+  }).join("");
+  el.querySelectorAll(".sr-remove").forEach(b=>b.onclick=()=>{scoreRules.splice(parseInt(b.dataset.idx,10),1);renderScoreRules();renderStudentsList();});
+  document.getElementById("srAddBtn").onclick=()=>{
+    const name=document.getElementById("srName").value.trim();
+    const type=document.getElementById("srType").value;
+    const st=parseInt(document.getElementById("srStudent").value,10)||0;
+    const gd=parseInt(document.getElementById("srGuardian").value,10)||0;
+    if(!name||(st===0&&gd===0)) return;
+    scoreRules.push({key:"rule_"+Date.now(),type,nameBn:name,nameEn:name,student:st,guardian:gd});
+    document.getElementById("srName").value="";document.getElementById("srStudent").value="0";document.getElementById("srGuardian").value="0";
+    renderScoreRules();renderStudentsList();
+  };
+}
+function renderScoreMgmt(){
+  const t=T[lang];
+  document.getElementById("scoreMgmtTitle").textContent=t.scoreMgmtTitle;
+  document.getElementById("scoreMgmtDesc").textContent=t.scoreMgmtDesc;
+  document.getElementById("lblScName").textContent=t.lblScName;
+  document.getElementById("lblScWho").textContent=t.lblScWho;
+  document.getElementById("lblScMax").textContent=t.lblScMax;
+  document.getElementById("scAddBtn").textContent=t.scAddBtn;
+  const whoSel=document.getElementById("scWho");
+  const prevWho=whoSel.value||"student";
+  whoSel.innerHTML=`<option value="student">${t.scWhoStudent}</option><option value="guardian">${t.scWhoGuardian}</option><option value="both">${t.scWhoBoth}</option>`;
+  whoSel.value=prevWho;
+  const listEl=document.getElementById("scoreCatList");
+  listEl.innerHTML=scoreCategories.map((c,i)=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--line);font-size:.85rem;">
+    <div>${lang==="bn"?c.labelBn:c.labelEn} <span style="color:var(--sub);">(${c.who==="student"?t.scWhoStudent:t.scWhoGuardian}, ${t.scMaxShort} ${c.max})</span></div>
+    <button data-idx="${i}" class="iconbtn sc-remove" style="background:var(--danger);">${t.scRemove}</button>
+  </div>`).join("");
+  listEl.querySelectorAll(".sc-remove").forEach(b=>b.onclick=()=>{
+    scoreCategories.splice(parseInt(b.dataset.idx,10),1);
+    renderScoreMgmt();
+  });
+  document.getElementById("scAddBtn").onclick=()=>{
+    const name=document.getElementById("scName").value.trim();
+    const who=document.getElementById("scWho").value;
+    const max=parseInt(document.getElementById("scMax").value,10);
+    if(!name||!max) return;
+    const baseKey="custom_"+Date.now();
+    if(who==="both"){
+      scoreCategories.push({key:baseKey+"_s",labelBn:name,labelEn:name,who:"student",max});
+      scoreCategories.push({key:baseKey+"_g",labelBn:name,labelEn:name,who:"guardian",max});
+    }else{
+      scoreCategories.push({key:baseKey,labelBn:name,labelEn:name,who,max});
+    }
+    document.getElementById("scName").value="";document.getElementById("scMax").value="";
+    renderScoreMgmt();
+  };
+}
+let loginLog=[];
+function deviceSummary(){
+  const ua=navigator.userAgent||"";
+  const os=/Android/i.test(ua)?"Android":/iPhone|iPad|iOS/i.test(ua)?"iOS":/Windows/i.test(ua)?"Windows":/Mac OS/i.test(ua)?"macOS":/Linux/i.test(ua)?"Linux":"Unknown";
+  const br=/Edg\//.test(ua)?"Edge":/OPR\//.test(ua)?"Opera":/Chrome\//.test(ua)?"Chrome":/Firefox\//.test(ua)?"Firefox":/Safari\//.test(ua)?"Safari":"Browser";
+  return os+" · "+br;
+}
+function logLogin(who,roleName){loginLog.unshift({time:new Date(),who,role:roleName,device:deviceSummary()});}
+function renderLoginLog(){
+  const t=T[lang];
+  document.getElementById("loginLogTitle").textContent=t.loginLogTitle;
+  document.getElementById("loginLogDesc").textContent=t.loginLogDesc;
+  const tbl=document.getElementById("loginLogTable");
+  if(!loginLog.length){tbl.innerHTML=`<tr><td style="color:var(--sub);">${t.llEmpty}</td></tr>`;return;}
+  tbl.innerHTML="<tr>"+t.llCols.map(h=>`<th>${h}</th>`).join("")+"</tr>"+loginLog.map(e=>`<tr><td>${e.time.toLocaleString(lang==="bn"?"bn-BD":"en-US")}</td><td>${e.who}</td><td>${t.llRoles[e.role]}</td><td>${e.device}</td><td style="color:var(--sub);">${t.llIp}</td></tr>`).join("");
+}
+const parentRegistry={"010526":{mobile:"০১৮১১-১১১১১১",pw:"123456"}};
+let pa={mode:"signin",step:1,mobile:"",code:"",pw:"",otp:null,msg:null,rolls:[]};
+function paReset(mode){pa={mode:mode||"signin",step:1,mobile:"",code:"",pw:"",otp:null,msg:null,rolls:[]};}
+function paMatch(mobile,code){return richStudents.find(st=>st.guardianMobile===mobile&&uniqueCode(st.classKey,st.roll,st.year)===code);}
+function paFail(text){pa.msg={text,type:"error"};renderParentAuth();}
+function renderParentAuth(){
+  const t=T[lang];
+  document.getElementById("parentTitle").textContent=t.parentTitle;
+  document.getElementById("parentDesc").textContent=t.parentDesc;
+  const tabs=document.getElementById("plTabs");
+  const main=pa.mode==="signin"||pa.mode==="signup";
+  tabs.style.display=main?"flex":"none";
+  tabs.innerHTML=main?[["signin",t.paSignIn],["signup",t.paSignUp]].map(([k,l])=>`<button data-m="${k}" class="iconbtn" style="flex:1;background:${pa.mode===k?"var(--green)":"transparent"};color:${pa.mode===k?"#fff":"var(--ink)"};border:1px solid var(--line);">${l}</button>`).join(""):"";
+  tabs.querySelectorAll("button").forEach(b=>b.onclick=()=>{paReset(b.dataset.m);renderParentAuth();});
+  const inp=(id,label,val,type,extra)=>`<label>${label}</label><input id="${id}" ${type?`type="${type}"`:""} value="${val||""}" ${extra||""}>`;
+  const linkStyle="background:none;border:none;color:var(--green);text-decoration:underline;cursor:pointer;font-family:inherit;font-size:.85rem;padding:4px 0;text-align:left;";
+  let h="";
+  if(pa.mode==="forgotpw") h+=`<h4 style="margin:6px 0 0;">${t.paForgotPw}</h4>`;
+  if(pa.mode==="forgotroll") h+=`<h4 style="margin:6px 0 0;">${t.paForgotRoll}</h4>`;
+  if(pa.step===1){
+    h+=inp("paMobile",t.lblMobile,pa.mobile);
+    if(pa.mode!=="forgotroll") h+=inp("paCode",t.lblRoll,pa.code);
+    if(pa.mode==="signin") h+=inp("paPw",t.lblPw,pa.pw,"password");
+    h+=`<button class="btn" id="paNext">${pa.mode==="signin"?t.paSignInBtn:t.paSendOtp}</button>`;
+    if(pa.mode==="signin"){
+      h+=`<div style="display:flex;flex-direction:column;margin-top:8px;"><button class="pa-link" data-m="forgotpw" style="${linkStyle}">${t.paForgotPw}</button><button class="pa-link" data-m="forgotroll" style="${linkStyle}">${t.paForgotRoll}</button></div><p class="hint">${t.paDemoHint}</p>`;
+    }
+  }else if(pa.step===2){
+    h+=`<div class="notice info" style="margin-top:10px;">${t.paOtpDemo}${pa.otp}</div>`+inp("paOtp",t.paOtpLbl,"",null,'inputmode="numeric" maxlength="6"')+`<button class="btn" id="paNext">${t.paVerifyOtp}</button>`;
+  }else{
+    if(pa.mode==="forgotroll"){
+      h+=`<p style="font-size:.88rem;">${t.paYourRolls}</p>`+pa.rolls.map(r=>`<div class="stu-row"><div class="snm">${r.name}</div><div class="smeta">${t.classOptions[r.classKey]} · ${uniqueCode(r.classKey,r.roll,r.year)}</div></div>`).join("");
+    }else{
+      h+=inp("paPw1",pa.mode==="signup"?t.lblPw:t.lblNewPw,"","password")+inp("paPw2",t.lblPw2,"","password")+`<button class="btn" id="paNext">${t.paSavePw}</button>`;
+    }
+  }
+  if(pa.mode==="forgotpw"||pa.mode==="forgotroll") h+=`<div style="margin-top:8px;"><button class="pa-link" data-m="signin" style="${linkStyle}">${t.paBack}</button></div>`;
+  document.getElementById("plBody").innerHTML=h;
+  document.querySelectorAll("#plBody .pa-link").forEach(b=>b.onclick=()=>{paReset(b.dataset.m);renderParentAuth();});
+  const nx=document.getElementById("paNext"); if(nx) nx.onclick=paNext;
+  const box=document.getElementById("parentLoginError");
+  if(pa.msg){box.style.display="block";box.className="notice"+(pa.msg.type==="info"?" info":"");box.textContent=pa.msg.text;}
+  else box.style.display="none";
+}
+function paNext(){
+  const t=T[lang];
+  const v=id=>{const el=document.getElementById(id);return el?el.value.trim():"";};
+  const newOtp=()=>{pa.otp=String(Math.floor(100000+Math.random()*900000));};
+  if(pa.step===1){
+    pa.mobile=v("paMobile");
+    if(pa.mode==="forgotroll"){
+      const list=richStudents.filter(st=>st.guardianMobile===pa.mobile);
+      if(!list.length) return paFail(t.paErrNoMobile);
+      pa.rolls=list;
+    }else{
+      pa.code=v("paCode");
+      if(!paMatch(pa.mobile,pa.code)) return paFail(t.paErrNoMatch);
+      const reg=parentRegistry[pa.code];
+      if(pa.mode==="signin"){
+        pa.pw=v("paPw");
+        if(!reg||reg.mobile!==pa.mobile) return paFail(t.paErrNotReg);
+        if(reg.pw!==pa.pw) return paFail(t.paErrPw);
+      }
+      if(pa.mode==="signup"&&reg) return paFail(t.paErrAlreadyReg);
+      if(pa.mode==="forgotpw"&&!reg) return paFail(t.paErrNotReg);
+    }
+    if(pa.mode==="signin"){
+      const code=pa.code;logLogin(pa.mobile+" ("+code+")","parent");
+      paReset("signin");
+      role="parent";loggedInId=code;currentTab="mydash";
+      render();showTab("mydash");return;
+    }
+    newOtp();pa.step=2;pa.msg=null;return renderParentAuth();
+  }
+  if(pa.step===2){
+    if(v("paOtp")!==pa.otp) return paFail(t.paErrOtp);
+    if(pa.mode==="signin"){
+      const code=pa.code;logLogin(pa.mobile+" ("+code+")","parent");
+      paReset("signin");
+      role="parent";loggedInId=code;currentTab="mydash";
+      render();showTab("mydash");return;
+    }
+    pa.step=3;pa.msg=null;return renderParentAuth();
+  }
+  if(pa.step===3){
+    const p1=v("paPw1"),p2=v("paPw2");
+    if(p1.length<6) return paFail(t.paErrPwShort);
+    if(p1!==p2) return paFail(t.paErrPwMismatch);
+    parentRegistry[pa.code]={mobile:pa.mobile,pw:p1};
+    const text=pa.mode==="signup"?t.paSignedUp:t.paPwReset;
+    paReset("signin");pa.msg={text,type:"info"};renderParentAuth();
+  }
+}
+function fillParentViews(id){
+  const t=T[lang];
+  const s=findByCode(id);
+  if(!s) return;
+  document.getElementById("pdName").textContent=s.name;
+  document.getElementById("pdClass").textContent=t.classOptions[s.classKey]+" · Roll "+s.roll;
+  const wrap=document.getElementById("mydashProfile");
+  wrap.innerHTML=`<div class="card" id="pw-${id}"></div>`;
+  mountProfileTabs(id,s,t,profileVisibility,false,document.getElementById("pw-"+id));
+  document.getElementById("pdPrintBtn").onclick=()=>{
+    document.getElementById("printArea").innerHTML=`<h2 style="margin-bottom:2px;">${t.homeTitle}</h2>
+      <div style="color:#555;margin-bottom:14px;">${t.studentsTitle} — ${s.name}</div>${fullProfileHTML(s,t,profileVisibility)}`;
+    window.print();
+  };
+}
+
+function fillSelect(sel,optsObj){
+  const prev=sel.dataset.key||"all";
+  sel.innerHTML=Object.keys(optsObj).map(k=>`<option value="${k}">${optsObj[k]}</option>`).join("");
+  sel.value=prev; sel.dataset.key=prev;
+  sel.onchange=()=>{sel.dataset.key=sel.value;renderStudentsList();};
+}
+function findByCode(code){return richStudents.find(s=>uniqueCode(s.classKey,s.roll,s.year)===code);}
+function renderAdmissionEntry(){
+  const t=T[lang];
+  const form=document.getElementById("admEntryForm");
+  form.style.display=role==="staff"?"block":"none";
+  if(role!=="staff") return;
+  document.getElementById("admEntryTitle").textContent=t.admEntryTitle;
+  document.getElementById("admEntryDesc").textContent=t.admEntryDesc;
+  document.getElementById("lblAeName").textContent=t.lblAeName;
+  document.getElementById("lblAeFather").textContent=t.lblAeFather;
+  document.getElementById("lblAeMother").textContent=t.lblAeMother;
+  document.getElementById("lblAeDob").textContent=t.lblAeDob;
+  document.getElementById("lblAeBirthReg").textContent=t.lblAeBirthReg;
+  document.getElementById("lblAeFatherMobile").textContent=t.lblAeFatherMobile;
+  document.getElementById("lblAeGuardianMobile").textContent=t.lblAeGuardianMobile;
+  document.getElementById("lblAeClass").textContent=t.lblAeClass;
+  document.getElementById("lblAeRoll").textContent=t.lblAeRoll;
+  document.getElementById("aeSubmitBtn").textContent=t.aeSubmitBtn;
+  const clsSel=document.getElementById("aeClass");
+  const prev=clsSel.value;
+  clsSel.innerHTML=Object.entries(t.classOptions).filter(([k])=>k!=="all").map(([k,v])=>`<option value="${k}">${v}</option>`).join("");
+  if(prev) clsSel.value=prev;
+  document.getElementById("aeSuccess").style.display="none";
+  document.getElementById("aeSubmitBtn").onclick=()=>{
+    const name=document.getElementById("aeName").value.trim();
+    const classKey=document.getElementById("aeClass").value;
+    const roll=parseInt(document.getElementById("aeRoll").value,10);
+    const box=document.getElementById("aeSuccess");
+    if(!name||!classKey||!roll){box.className="notice";box.style.display="block";box.textContent=t.aeFillRequired;return;}
+    const currentYear=26;
+    if(richStudents.some(s=>s.classKey===classKey&&s.roll===roll&&s.year===currentYear)){
+      box.className="notice";box.style.display="block";box.textContent=t.aeRollTaken;return;
+    }
+    const newStudent={
+      name,
+      father:document.getElementById("aeFather").value.trim(),
+      mother:document.getElementById("aeMother").value.trim(),
+      dob:document.getElementById("aeDob").value,
+      birthReg:document.getElementById("aeBirthReg").value.trim(),
+      fatherMobile:document.getElementById("aeFatherMobile").value.trim(),
+      guardianMobile:document.getElementById("aeGuardianMobile").value.trim(),
+      classKey, roll, year:currentYear,
+      scores:{attendance:0,punctuality:0,homework:0,fee:0,informing:0,returnLeave:0},
+      absenceLog:[],
+      todayStatus:"present",
+      attendance:"—",
+      results:{monthly:"—",first:"—",second:"—",annual:"—"},
+      feeStatus:"due",feeDue:0
+    };
+    richStudents.push(newStudent);
+    const code=uniqueCode(classKey,roll,currentYear);
+    box.className="notice info";box.style.display="block";box.textContent=t.aeSuccess+code;
+    ["aeName","aeFather","aeMother","aeDob","aeBirthReg","aeFatherMobile","aeGuardianMobile","aeRoll"].forEach(id=>document.getElementById(id).value="");
+    renderStudentsList();
+    renderAttendance();
+  };
+}
+const ATT_CUTOFF_HOUR=14;
+function attendanceEditable(){return new Date().getHours()<ATT_CUTOFF_HOUR;}
+let attClassFilter="all";
+function renderAttendance(){
+  const t=T[lang];
+  document.getElementById("attTitle").textContent=t.attTitle;
+  const now=new Date();
+  const dateStr=now.toLocaleDateString(lang==="bn"?"bn-BD":"en-US",{day:"numeric",month:"long",year:"numeric"});
+  document.getElementById("attDateNote").textContent=t.attDateNote.replace("{date}",dateStr);
+
+  const tabsWrap=document.getElementById("attClassTabs");
+  const opts=[["all",t.classOptions.all],["play",t.classOptions.play],["nursery",t.classOptions.nursery],["prothom",t.classOptions.prothom],["dwitiyo",t.classOptions.dwitiyo],["tritiyo",t.classOptions.tritiyo]];
+  tabsWrap.innerHTML=opts.map(([k,label])=>{
+    const active=k===attClassFilter;
+    return `<button data-cls="${k}" class="iconbtn" style="background:${active?"var(--green)":"transparent"};color:${active?"#fff":"var(--ink)"};border:1px solid var(--line);">${label}</button>`;
+  }).join("");
+  tabsWrap.querySelectorAll("button").forEach(b=>b.onclick=()=>{attClassFilter=b.dataset.cls;renderAttendance();});
+
+  const editable=attendanceEditable();
+  const noticeEl=document.getElementById("attEditNotice");
+  noticeEl.textContent=editable?t.attEditNote:t.attEditClosed;
+
+  const list=richStudents.filter(s=>attClassFilter==="all"||s.classKey===attClassFilter);
+  const statusLabel={present:t.attPresent,absent:t.attAbsent,late:t.attLate};
+  document.getElementById("attList").innerHTML=list.map(s=>{
+    const code=uniqueCode(s.classKey,s.roll,s.year);
+    return `<div class="stu-row" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+      <div class="who"><span class="snm">${s.name}</span><span class="smeta">${t.classOptions[s.classKey]} · Roll ${s.roll}</span></div>
+      <div style="display:flex;gap:6px;">
+        ${["present","late","absent"].map(st=>`<button data-code="${code}" data-status="${st}" class="tag ${st}" style="cursor:${editable?"pointer":"default"};border:2px solid ${s.todayStatus===st?"var(--ink)":"transparent"};opacity:${editable?1:.55};" ${editable?"":"disabled"}>${statusLabel[st]}</button>`).join("")}
+      </div>
+    </div>`;
+  }).join("");
+  document.getElementById("attList").querySelectorAll("button[data-status]").forEach(b=>{
+    b.onclick=()=>{
+      if(!attendanceEditable()) return;
+      const s=findByCode(b.dataset.code);
+      if(s){s.todayStatus=b.dataset.status;renderAttendance();}
+    };
+  });
+}
+function matchStudents(){
+  const nameQ=document.getElementById("sNameSearch").value.trim();
+  const rollQ=document.getElementById("sRollSearch").value.trim();
+  const classQ=(document.getElementById("sClassFilter").dataset.key)||"all";
+  return richStudents.filter(s=>
+    (!nameQ||s.name.includes(nameQ)) &&
+    (!rollQ||String(s.roll).includes(rollQ)) &&
+    (classQ==="all"||s.classKey===classQ)
+  );
+}
+function feeText(s,t){
+  const st=s.feeStatus==="paid"?(lang==="bn"?"পরিশোধিত":"Paid"):(lang==="bn"?"বকেয়া":"Due");
+  return s.feeStatus==="due"?`${st} — ${t.fFeeDue}: ${s.feeDue}`:st;
+}
+function sumBy(arr,f){return (arr||[]).reduce((a,x)=>a+f(x),0);}
+function scoreHTML(s,t){
+  const val=k=>(s.scores&&s.scores[k]!==undefined)?s.scores[k]:0;
+  const studentCats=scoreCategories.filter(c=>c.who==="student");
+  const guardianCats=scoreCategories.filter(c=>c.who==="guardian");
+  const sBase=sumBy(studentCats,c=>val(c.key)), sMax=sumBy(studentCats,c=>c.max);
+  const gBase=sumBy(guardianCats,c=>val(c.key)), gMax=sumBy(guardianCats,c=>c.max);
+  const plusS=sumBy(s.bonusLog,x=>x.student), plusG=sumBy(s.bonusLog,x=>x.guardian);
+  const minS=sumBy(s.absenceLog,a=>a.studentDeduct)+sumBy(s.penaltyLog,x=>x.student);
+  const minG=sumBy(s.absenceLog,a=>a.guardianDeduct)+sumBy(s.penaltyLog,x=>x.guardian);
+  const netS=sBase+plusS-minS, netG=gBase+plusG-minG;
+  const lbl=c=>lang==="bn"?c.labelBn:c.labelEn;
+  const line="font-size:.8rem;color:var(--sub);padding:4px 0;border-bottom:1px dashed var(--line);";
+  let html=`<div class="dsec">${t.secScore}</div>`;
+  html+=`<div style="font-weight:600;margin:2px 0 0;">${t.fScoreStudent} — <span style="color:var(--green);">${t.scNet}: ${netS}</span></div>`;
+  html+=`<div style="font-size:.78rem;color:var(--sub);margin-bottom:4px;">${t.scBase} ${sBase}/${sMax} · <span style="color:var(--ok);">+${plusS}</span> · <span style="color:var(--danger);">−${minS}</span></div>`;
+  html+=`<div class="dl" style="margin-bottom:8px;">`+studentCats.map(c=>`<div><span>${lbl(c)}:</span> ${val(c.key)}/${c.max}</div>`).join("")+`</div>`;
+  html+=`<div style="font-weight:600;margin:2px 0 0;">${t.fScoreGuardian} — <span style="color:var(--green);">${t.scNet}: ${netG}</span></div>`;
+  html+=`<div style="font-size:.78rem;color:var(--sub);margin-bottom:4px;">${t.scBase} ${gBase}/${gMax} · <span style="color:var(--ok);">+${plusG}</span> · <span style="color:var(--danger);">−${minG}</span></div>`;
+  html+=`<div class="dl" style="margin-bottom:8px;">`+guardianCats.map(c=>`<div><span>${lbl(c)}:</span> ${val(c.key)}/${c.max}</div>`).join("")+`</div>`;
+  if(s.bonusLog && s.bonusLog.length){
+    html+=`<div style="font-weight:600;margin:4px 0 2px;font-size:.85rem;color:var(--ok);">${t.plusLogTitle}</div>`;
+    html+=s.bonusLog.map(x=>`<div style="${line}">${x.date} — ${ruleLabel(x.ruleKey)} · ${t.fScoreStudent} +${x.student}, ${t.fScoreGuardian} +${x.guardian}</div>`).join("");
+  }
+  if((s.absenceLog&&s.absenceLog.length)||(s.penaltyLog&&s.penaltyLog.length)){
+    html+=`<div style="font-weight:600;margin:4px 0 2px;font-size:.85rem;color:var(--danger);">${t.minusLogTitle}</div>`;
+    html+=(s.absenceLog||[]).map(a=>`<div style="${line}">${a.date} — ${t.reasonLabels[a.reason]} (${t.reportedDayLabels[a.reportedDay]}) · ${t.fScoreStudent} −${a.studentDeduct}, ${t.fScoreGuardian} −${a.guardianDeduct}</div>`).join("");
+    html+=(s.penaltyLog||[]).map(x=>`<div style="${line}">${x.date} — ${ruleLabel(x.ruleKey)} · ${t.fScoreStudent} −${x.student}, ${t.fScoreGuardian} −${x.guardian}</div>`).join("");
+  }
+  return html;
+}
+function sectionContentHTML(key,s,t,vis,canEdit,code){
+  if(key==="profile"){
+    let h="";
+    if(vis.personal) h+=`<div class="dsec">${t.secPersonal}</div><div class="dl">
+      <div><span>${t.fFather}:</span> ${s.father}</div>
+      <div><span>${t.fMother}:</span> ${s.mother}</div>
+      <div><span>${t.fDob}:</span> ${s.dob}</div>
+      <div><span>${t.fBirthReg}:</span> ${s.birthReg}</div>
+      <div><span>${t.fFatherMobile}:</span> ${s.fatherMobile}</div>
+      <div><span>${t.fGuardianMobile}:</span> ${s.guardianMobile}</div>
+    </div>`;
+    if(vis.academic) h+=`<div class="dsec">${t.secAcademic}</div><div class="dl">
+      <div><span>${t.fMadrasa}:</span> ${t.homeTitle}</div>
+      <div><span>${t.fClass}:</span> ${t.classOptions[s.classKey]}</div>
+      <div><span>${t.fRoll}:</span> ${s.roll}</div>
+      <div><span>${t.fUnique}:</span> ${uniqueCode(s.classKey,s.roll,s.year)}</div>
+    </div>`;
+    return h||`<p class="hint">${t.noAccess}</p>`;
+  }
+  if(key==="score"){
+    if(!vis.score) return `<p class="hint">${t.noAccess}</p>`;
+    let h=`<div style="font-size:.82rem;color:var(--sub);margin-bottom:6px;">${t.secAttendance}: ${s.attendance}</div>`;
+    h+=scoreHTML(s,t);
+    h+=`<div class="dsec" style="margin-top:8px;">${t.scRulesInline}</div>`+scoreRules.map(r=>`<div style="font-size:.78rem;color:var(--sub);padding:2px 0;">${r.type==="plus"?"+":"−"} ${lang==="bn"?r.nameBn:r.nameEn} (${t.fScoreStudent} ${r.type==="plus"?"+":"−"}${r.student}, ${t.fScoreGuardian} ${r.type==="plus"?"+":"−"}${r.guardian})</div>`).join("");
+    if(canEdit){
+      h+=`<div class="dsec" style="margin-top:8px;">${t.scApplyTitle}</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;">
+        <select class="rule-sel" id="rulesel-${code}" style="flex:1;min-width:150px;">${scoreRules.map(r=>`<option value="${r.key}">${r.type==="plus"?"＋":"－"} ${lang==="bn"?r.nameBn:r.nameEn}</option>`).join("")}</select>
+        <button class="iconbtn" id="ruleapply-${code}">${t.scApplyBtn}</button>
+      </div>`;
+    }
+    return h;
+  }
+  if(key==="homework"){
+    const hw=s.homework||[];
+    if(!hw.length) return `<p class="hint">${t.noHomework}</p>`;
+    return hw.map(h=>`<div style="padding:6px 0;border-bottom:1px solid var(--line);font-size:.86rem;">
+      <div style="font-weight:600;">${h.subject} <span class="tag ${h.status==="done"?"present":"late"}">${h.status==="done"?t.hwDone:t.hwPending}</span></div>
+      <div style="color:var(--sub);">${h.date} — ${h.desc}</div>
+    </div>`).join("");
+  }
+  if(key==="examNotice"){
+    if(!examNotices.length) return `<p class="hint">${t.noticeEmpty}</p>`;
+    return examNotices.map(n=>`<div style="padding:8px 0;border-bottom:1px solid var(--line);">
+      <div style="font-size:.74rem;color:var(--sub);">${n.date}</div>
+      <div style="font-weight:600;font-size:.9rem;">${n.title}</div>
+      <div style="font-size:.84rem;color:var(--sub);">${n.body}</div>
+    </div>`).join("");
+  }
+  if(key==="examRoutine"){
+    return `<div class="tablewrap"><table><tr>`+t.examCols.map(cc=>`<th>${cc}</th>`).join("")+`</tr>`+exams.map(r=>`<tr>${r.map(cc=>`<td>${cc}</td>`).join("")}</tr>`).join("")+`</table></div>`;
+  }
+  if(key==="results"){
+    if(!vis.result) return `<p class="hint">${t.noAccess}</p>`;
+    return `<div>${resultBlock(s,"all",t,"<br>")}</div>`;
+  }
+  if(key==="fees"){
+    if(!vis.fee) return `<p class="hint">${t.noAccess}</p>`;
+    let h=`<div class="dsec">${t.feeDueTitle}</div>`;
+    const due=s.dueItems||[];
+    h+= due.length? due.map(d=>`<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--line);font-size:.86rem;"><span>${d.item}</span><span>৳${d.amount}</span></div>`).join("") : `<p class="hint">${t.noDue}</p>`;
+    h+=`<div class="dsec" style="margin-top:10px;">${t.feeInvoiceTitle}</div>`;
+    const inv=s.invoices||[];
+    h+= inv.length? inv.map(i=>`<div style="padding:6px 0;border-bottom:1px solid var(--line);font-size:.86rem;"><div style="display:flex;justify-content:space-between;"><span>${i.item}</span><span>৳${i.amount}</span></div><div style="color:var(--sub);font-size:.76rem;">${i.no} · ${i.date}</div></div>`).join("") : `<p class="hint">${t.noInvoice}</p>`;
+    return h;
+  }
+  return "";
+}
+function mountProfileTabs(code,s,t,vis,canEdit,container){
+  if(!container) return;
+  const active=profileActiveSection[code]||"profile";
+  const tabsHtml=profileSections.map(sec=>{
+    const on=sec.key===active;
+    return `<button data-sec="${sec.key}" class="iconbtn" style="background:${on?"var(--green)":"transparent"};color:${on?"#fff":"var(--ink)"};border:1px solid var(--line);font-size:.78rem;padding:6px 10px;">${lang==="bn"?sec.labelBn:sec.labelEn}</button>`;
+  }).join("");
+  container.innerHTML=`<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">${tabsHtml}</div><div class="pbody"></div>`;
+  const pbody=container.querySelector(".pbody");
+  function draw(){
+    const key=profileActiveSection[code]||"profile";
+    pbody.innerHTML=sectionContentHTML(key,s,t,vis,canEdit,code);
+    if(canEdit&&key==="score"){
+      const btn=pbody.querySelector("#ruleapply-"+code);
+      if(btn) btn.onclick=()=>{
+        const sel=pbody.querySelector("#rulesel-"+code);
+        const r=ruleOf(sel.value);
+        if(!r) return;
+        const entry={date:new Date().toLocaleDateString(lang==="bn"?"bn-BD":"en-US",{day:"numeric",month:"short"}),ruleKey:r.key,student:r.student,guardian:r.guardian};
+        if(r.type==="plus"){s.bonusLog=s.bonusLog||[];s.bonusLog.push(entry);}else{s.penaltyLog=s.penaltyLog||[];s.penaltyLog.push(entry);}
+        draw();
+      };
+    }
+  }
+  container.querySelectorAll("button[data-sec]").forEach(b=>b.onclick=()=>{
+    profileActiveSection[code]=b.dataset.sec;
+    container.querySelectorAll("button[data-sec]").forEach(bb=>{
+      const on=bb.dataset.sec===b.dataset.sec;
+      bb.style.background=on?"var(--green)":"transparent";
+      bb.style.color=on?"#fff":"var(--ink)";
+    });
+    draw();
+  });
+  draw();
+}
+function fullProfileHTML(s,t,vis){
+  return profileSections.map(sec=>`<h3>${lang==="bn"?sec.labelBn:sec.labelEn}</h3>${sectionContentHTML(sec.key,s,t,vis,false,"print")}`).join("");
+}
+function resultBlock(s,resultFilter,t,sep){
+  const keys=resultFilter==="all"?Object.keys(t.resultOptions).filter(k=>k!=="all"):[resultFilter];
+  return keys.map(k=>`${t.resultOptions[k]}: ${s.results[k]}`).join(sep);
+}
+function studentRowHTML(s,resultFilter,t){
+  const code=uniqueCode(s.classKey,s.roll,s.year);
+  const clsLabel=t.classOptions[s.classKey];
+  const resHTML=resultBlock(s,resultFilter,t,"<br>");
+  return `<div class="stu-row" data-code="${code}">
+    <div class="stu-head">
+      <div class="who"><span class="snm">${s.name}</span><span class="smeta">${clsLabel} · Roll ${s.roll} · ${code}</span></div>
+      <div class="sactions"><button class="iconbtn print-one" data-code="${code}">${t.printOneBtn}</button></div>
+    </div>
+    <div class="stu-detail">
+      <div id="pw-${code}"></div>
+    </div>
+  </div>`;
+}
+function renderStudentsList(){
+  const t=T[lang];
+  const list=matchStudents();
+  document.getElementById("sCountHint").textContent=list.length+" "+t.sCountHint;
+  const resultFilter=(document.getElementById("sResultFilter").dataset.key)||"all";
+  const container=document.getElementById("studentsRichList");
+  const openCodes=[...container.querySelectorAll(".stu-row")].filter(r=>r.querySelector(".stu-detail.open")).map(r=>r.dataset.code);
+  container.innerHTML=list.map(s=>studentRowHTML(s,resultFilter,t)).join("");
+  container.querySelectorAll(".stu-row").forEach(r=>{if(openCodes.includes(r.dataset.code)) r.querySelector(".stu-detail").classList.add("open");});
+  container.querySelectorAll(".stu-head").forEach(h=>h.onclick=(e)=>{
+    if(e.target.closest(".iconbtn")) return;
+    h.nextElementSibling.classList.toggle("open");
+  });
+  container.querySelectorAll(".print-one").forEach(b=>b.onclick=(e)=>{
+    e.stopPropagation();
+    printOneStudent(b.dataset.code,resultFilter);
+  });
+  const fullVis={personal:true,academic:true,score:true,result:true,fee:true};
+  list.forEach(s=>{
+    const code=uniqueCode(s.classKey,s.roll,s.year);
+    const mount=document.getElementById("pw-"+code);
+    if(mount) mountProfileTabs(code,s,t,fullVis,true,mount);
+  });
+}
+function printOneStudent(code,resultFilter){
+  const s=findByCode(code); if(!s) return;
+  const t=T[lang];
+  document.getElementById("printArea").innerHTML=`
+    <h2 style="margin-bottom:2px;">${t.homeTitle}</h2>
+    <div style="color:#555;margin-bottom:14px;">${t.studentsTitle} — ${s.name}</div>
+    ${fullProfileHTML(s,t,{personal:true,academic:true,score:true,result:true,fee:true})}`;
+  window.print();
+}
+function printStudentList(){
+  const t=T[lang];
+  const list=matchStudents();
+  const resultFilter=(document.getElementById("sResultFilter").dataset.key)||"all";
+  let html=`<h2>${t.homeTitle}</h2><div style="color:#555;margin-bottom:12px;">${t.studentsTitle}</div>
+    <table style="width:100%;border-collapse:collapse;"><tr>
+    <th style="text-align:left;border-bottom:1px solid #999;padding:4px;">${t.fName}</th>
+    <th style="text-align:left;border-bottom:1px solid #999;padding:4px;">${t.fClass}</th>
+    <th style="text-align:left;border-bottom:1px solid #999;padding:4px;">${t.fRoll}</th>
+    <th style="text-align:left;border-bottom:1px solid #999;padding:4px;">${t.fUnique}</th>
+    <th style="text-align:left;border-bottom:1px solid #999;padding:4px;">${t.resultOptions[resultFilter]||t.secResult}</th>
+    <th style="text-align:left;border-bottom:1px solid #999;padding:4px;">${t.fGuardianMobile}</th>
+    </tr>`+list.map(s=>`<tr>
+      <td style="padding:4px;border-bottom:1px solid #ddd;">${s.name}</td>
+      <td style="padding:4px;border-bottom:1px solid #ddd;">${t.classOptions[s.classKey]}</td>
+      <td style="padding:4px;border-bottom:1px solid #ddd;">${s.roll}</td>
+      <td style="padding:4px;border-bottom:1px solid #ddd;">${uniqueCode(s.classKey,s.roll,s.year)}</td>
+      <td style="padding:4px;border-bottom:1px solid #ddd;">${resultBlock(s,resultFilter,t,", ")}</td>
+      <td style="padding:4px;border-bottom:1px solid #ddd;">${s.guardianMobile}</td>
+    </tr>`).join("")+`</table>`;
+  document.getElementById("printArea").innerHTML=html;
+  window.print();
+}
+
+document.getElementById("hamburgerBtn").onclick=openSidebar;
+document.getElementById("overlay").onclick=closeSidebar;
+document.getElementById("gearBtn").onclick=()=>document.getElementById("langPanel").classList.toggle("open");
+document.getElementById("btnBn").onclick=()=>{lang="bn";render();};
+document.getElementById("btnEn").onclick=()=>{lang="en";render();};
+
+document.getElementById("staffLoginBtn").onclick=()=>{
+  const id=document.getElementById("staffId").value.trim();
+  const pass=document.getElementById("staffPass").value.trim();
+  const err=document.getElementById("staffLoginError");
+  if(staffAccounts[id] && staffAccounts[id]===pass){
+    err.style.display="none"; logLogin(id,"staff"); role="staff"; currentTab="students";
+    render(); showTab("students");
+  }else{ err.style.display="block"; }
+};
+document.getElementById("logoutBtn").onclick=()=>{
+  role="guest"; loggedInId=null; currentTab="home";
+  paReset("signin");
+  document.getElementById("staffId").value=""; document.getElementById("staffPass").value="";
+  render(); showTab("home"); closeSidebar();
+};
+document.getElementById("payNowBtn").onclick=()=>{};
+document.getElementById("sNameSearch").oninput=renderStudentsList;
+document.getElementById("sRollSearch").oninput=renderStudentsList;
+document.getElementById("printListBtn").onclick=printStudentList;
+document.getElementById("addNoticeBtn").onclick=()=>{
+  const title=document.getElementById("noticeTitleInput").value.trim();
+  const body=document.getElementById("noticeBodyInput").value.trim();
+  if(!title) return;
+  const today=new Date();
+  const dateStr=today.toLocaleDateString(lang==="bn"?"bn-BD":"en-US",{day:"numeric",month:"short"});
+  notices.unshift({dateBn:dateStr,dateEn:dateStr,titleBn:title,titleEn:title,bodyBn:body,bodyEn:body});
+  document.getElementById("noticeTitleInput").value="";
+  document.getElementById("noticeBodyInput").value="";
+  render();
+};
+
+render();
+</script>
+</body>
+</html>
